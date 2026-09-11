@@ -1,0 +1,61 @@
+{% comment %}
+  "Kullanım Kılavuzunu Görüntüle" butonu
+  ---------------------------------------
+  Bu dosya piri-manual sitesinin kaynağıdır; Shopify tema koduna elle veya
+  Shopify CLI ile kopyalanıp yapıştırılır (`shopify theme push` ile
+  yüklenmeden önce ilgili section/snippet dosyasına eklenmeli).
+
+  Nereye eklenir: genelde `sections/main-product.liquid` içinde, "Sepete
+  Ekle" butonunun hemen altına. Tam dosya adı kullanılan temaya göre
+  değişebilir (Dawn tabanlı temalarda bu isimdedir).
+
+  Nasıl çalışır: Shopify'daki ürünün "handle"ına (adres kısmındaki kısım,
+  örn. pirired.com.au/products/piri-desktop-500 -> handle = piri-desktop-500)
+  bakıp doğru kılavuz sayfasına link veriyor. Kılavuzda karşılığı olmayan
+  bir ürünse (Piri LED Mask, standlar, vb.) hiçbir şey göstermiyor.
+
+  ÖNEMLİ - senkron tutulması gerekenler:
+  - `manual_base_url`: piri-manual sitesinin gerçek adresi. Deploy adresi
+    değişirse (örn. Shopify'ın kendi alt alan adına taşınırsa) burada
+    güncellenir.
+  - Aşağıdaki eşleştirme listesi: `content/manual/index.ts` içindeki
+    `productIds` listesiyle senkron olmalı. Bir ürün eklenince/adı ya da
+    slug'ı değişince (bkz. docs/manual-refactor/2026-09-10-*.md) bu dosya
+    da güncellenmeli, yoksa Shopify'daki buton yanlış/eksik sayfaya gider.
+    Güncel eşleştirme tablosu: shopify/README.md
+{% endcomment %}
+
+{% assign manual_base_url = "https://pirired.vercel.app" %}
+{% assign manual_slug = "" %}
+
+{% case product.handle %}
+  {% when "piri-portable" %}
+    {% assign manual_slug = "piri-portable" %}
+  {% when "piri-origin-red-light-therapy-panel-for-home-use-black", "piri-origin-red-light-therapy-panel-for-home-use-white" %}
+    {% assign manual_slug = "piri-origin" %}
+  {% when "piri-origin-pro-red-light-therapy-panel-with-pulsing-black", "piri-origin-pro-red-light-therapy-panel-with-pulsing-white" %}
+    {% assign manual_slug = "piri-origin-pro" %}
+  {% when "piri-core-pro" %}
+    {% assign manual_slug = "piri-core-pro" %}
+  {% when "piri-max" %}
+    {% assign manual_slug = "piri-max-v0" %}
+  {% when "piri-max-1500" %}
+    {% assign manual_slug = "piri-max-1500" %}
+  {% when "piri-vista-2250" %}
+    {% assign manual_slug = "piri-vista-2250" %}
+  {% when "piri-desktop-500" %}
+    {% assign manual_slug = "piri-desktop-500" %}
+  {% when "piri-prime" %}
+    {% assign manual_slug = "piri-prime" %}
+{% endcase %}
+
+{% if manual_slug != "" %}
+  <a
+    href="{{ manual_base_url }}/manual/{{ manual_slug }}"
+    target="_blank"
+    rel="noopener"
+    class="button button--secondary"
+  >
+    Kullanım Kılavuzunu Görüntüle
+  </a>
+{% endif %}

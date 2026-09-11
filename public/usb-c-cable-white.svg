@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 70" fill="none">
+  <path
+    d="M36 35 C 65 15, 95 55, 130 32 C 148 21, 154 46, 164 40"
+    stroke="#d1d5db"
+    stroke-width="9"
+    stroke-linecap="round"
+    fill="none"
+  />
+  <path
+    d="M36 35 C 65 15, 95 55, 130 32 C 148 21, 154 46, 164 40"
+    stroke="#f9fafb"
+    stroke-width="5"
+    stroke-linecap="round"
+    fill="none"
+  />
+  <!-- USB-C connector, left end -->
+  <rect x="12" y="27" width="24" height="16" rx="7" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2.5" />
+  <rect x="17" y="32" width="14" height="6" rx="2" fill="#d1d5db" />
+  <!-- USB-C connector, right end -->
+  <rect x="164" y="32" width="24" height="16" rx="7" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2.5" />
+  <rect x="169" y="37" width="14" height="6" rx="2" fill="#d1d5db" />
+</svg>
