@@ -4,7 +4,7 @@ import { proHowToSteps, advancedWirelessSyncCard } from "@/content/manual/shared
 export const piriOriginPro: ProductManual = {
   id: "piri-origin-pro",
   name: "Piri Origin Pro",
-  tagline: "Advanced desktop model with enhanced features and customizable settings.",
+  tagline: "Piri Origin with touchscreen controls and custom settings.",
   cardImage: "/piridesktoppro00.png",
   features: ["Pro Features", "Smart Display", "Advanced Settings"],
 

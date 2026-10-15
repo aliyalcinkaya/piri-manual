@@ -1,21 +1,24 @@
+import {sectionTitles} from '@/content/manual/section-titles'
 import type { FeatureCard } from "@/content/manual/types"
 
 interface AdditionalFeaturesProps {
   cards: FeatureCard[]
+  id?:string
 }
 
-export function AdditionalFeatures({ cards }: AdditionalFeaturesProps) {
+export function AdditionalFeatures({ cards,id="additional-features" }: AdditionalFeaturesProps) {
   if (cards.length === 0) return null
 
   return (
-    <section id="additional-features" className="scroll-mt-20">
-      <h2 className="text-2xl font-bold mb-6">Additional Features &amp; Tips</h2>
+    <section id={id} className="scroll-mt-20">
+      <h2>{sectionTitles['additional-features']}</h2>
+      <p>Controls and optional accessories can vary by hardware revision. If your device does not show the controls described below, contact Piri Red before following the sequence.</p>
 
       <div className="space-y-6">
         {cards.map((card) => (
           <div
             key={card.title}
-            className={`bg-gradient-to-br ${card.accent ?? "from-gray-50 to-gray-100"} p-6 rounded-lg border`}
+            className="additional-control"
           >
             <h3 className="text-lg font-semibold mb-3">{card.title}</h3>
             {card.body && <p className="text-gray-700 leading-relaxed">{card.body}</p>}
@@ -32,3 +35,4 @@ export function AdditionalFeatures({ cards }: AdditionalFeaturesProps) {
     </section>
   )
 }
+

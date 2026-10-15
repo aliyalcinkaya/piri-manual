@@ -1,17 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
+import Script from 'next/script'
 import "./globals.css"
+import "./manuals.css"
 
 export const metadata: Metadata = {
   title: "Piri Red User Manuals",
   description: "User manuals for Piri Red Light Therapy devices",
-  generator: "v0.app",
+  metadataBase: new URL('https://docs.pirired.com'),
   icons: {
-    icon: "favicon.svg",
+    icon: "/favicon.svg",
   },
 }
 
@@ -22,8 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body>
         <Suspense fallback={null}>{children}</Suspense>
+        <Script src="/print-links.js" strategy="afterInteractive"/>
         <Analytics />
       </body>
     </html>

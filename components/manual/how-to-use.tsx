@@ -1,137 +1,26 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Zap } from "lucide-react"
-import Image from "next/image"
-import type { HowToUse as HowToUseData, HowToStep, ImageRef } from "@/content/manual/types"
-import { renderInlineBold } from "@/components/manual/inline-bold"
-
-interface HowToUseProps {
-  data: HowToUseData
+import {sectionTitles} from '@/content/manual/section-titles'
+import type {HowToUse as HowToUseData,ImageRef,HowToStep} from '@/content/manual/types'
+import {renderInlineBold} from './inline-bold'
+function Figure({image}:{image:ImageRef}) {return <figure className="manual-figure"><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size image: ${image.alt}`}><img src={image.src} alt={image.alt} width={image.width??600} height={image.height??400} loading="lazy"/></a>{image.caption&&<figcaption>{image.caption}</figcaption>}</figure>}
+function Step({step,index}:{step:HowToStep;index:number}) {if(step.images?.[0]?.src==='/pro-step-8-sync-1.png')return <ApprovedSynchronousWorking/>;return <li className="setup-step"><span className="step-number" aria-hidden="true">{index+1}</span><div><h3>{step.title}</h3>{step.subtitle&&<p className="step-subtitle">{step.subtitle}</p>}<ul>{step.bullets.map((b,i)=><li key={i}>{renderInlineBold(b)}</li>)}</ul>{step.note&&<p className="reference-note">{step.note}</p>}{(step.images??(step.image?[step.image]:[])).map((image,i)=><Figure key={i} image={image}/>)}</div></li>}
+import {desktopManualGroup as desktopPrintGroup,extendedPrintGroup} from '@/content/manual/layout-groups'
+function SplitStandardControls(){
+  return <div className="setup-split-diagrams"><svg className="setup-panel-crop" viewBox="241 98 255 865" role="img" aria-label="Control Panel"><image href="/shared-controls/standard-panel-and-remote.png" width="1536" height="1024"/></svg><svg className="setup-remote-crop" viewBox="793 98 563 865" role="img" aria-label="Remote Control, front and battery compartment"><image href="/shared-controls/standard-panel-and-remote.png" width="1536" height="1024"/></svg></div>
+}
+function RemoteStep({data}:{data:HowToUseData}){return data.remoteControl&&<li className="setup-step"><span className="step-number" aria-hidden="true">{data.steps.length+1}</span><div><h3>Remote Control</h3>{data.remoteControl.intro&&<p>{data.remoteControl.intro}</p>}{data.remoteControl.steps.map((step,index)=><div key={index}>{step.title&&<h4>{step.title}</h4>}{step.subtitle&&<p>{step.subtitle}</p>}<ul>{step.bullets.map((bullet,i)=><li key={i}>{renderInlineBold(bullet)}</li>)}</ul>{step.note&&<p className="reference-note">{step.note}</p>}{(step.images??(step.image?[step.image]:[])).map((image,i)=><Figure key={i} image={image}/>)}</div>)}{data.remoteControl.image&&<Figure image={data.remoteControl.image}/>}</div></li>}
+function ApprovedStartPause(){return <li className="setup-step approved-start-pause"><div className="pro-control-screens">{[0,1].map(index=><figure className="pro-control-figure" key={index}><div className={`pro-control-screen screen-${index}`}><img src={`/pro-screens/1-start-pause-${index}.svg`} width="790" height="623" alt={index===0?'Control panel with the light off.':'Press Start / Pause to switch the light on or off.'}/></div><figcaption>{['i','ii'][index]}</figcaption></figure>)}</div><div className="pro-control-copy"><div className="pro-control-heading"><span className="step-number" aria-hidden="true">1</span><h3>Start / Pause</h3></div><ul><li>When the lights are off, the device is in standby mode. (i)</li><li>Click to turn the light on or off. (ii)</li></ul></div></li>}
+function ApprovedTimeSetting(){return <li className="setup-step approved-start-pause approved-time-setting"><div className="pro-control-screens">{[0,1,2].map(index=><figure className="pro-control-figure" key={index}><div className={`pro-control-screen screen-${index}`}><img src={`/pro-screens/2-time-setting-${index}.svg`} width="1090" height="714" alt={['Open the timer settings.','Adjust the session duration.','Turn off the Timer switch.'][index]}/></div><figcaption>{['i','ii','iii'][index]}</figcaption></figure>)}</div><div className="pro-control-copy"><div className="pro-control-heading"><span className="step-number" aria-hidden="true">2</span><h3>Time Setting</h3></div><ul><li>Click the time display to open the timer settings. (i)</li><li>Slide the colored control to adjust the session duration. (ii)</li><li>To disable the timer, turn off the Timer switch. (iii)</li></ul></div></li>}
+function ApprovedDimmer(){return <li className="setup-step approved-start-pause approved-dimmer"><div className="pro-control-screens">{[0,1].map(index=><figure className="pro-control-figure" key={index}><div className={`pro-control-screen screen-${index}`}><img src={`/pro-screens/3-dimmer-${index}.svg`} width="707" height="687" alt={index===0?'Open the brightness settings.':'Adjust brightness with the colored controls or plus and minus buttons.'}/></div><figcaption>{['i','ii'][index]}</figcaption></figure>)}</div><div className="pro-control-copy"><div className="pro-control-heading"><span className="step-number" aria-hidden="true">3</span><h3>Dimmer</h3></div><ul><li>Click Dimmer to open the brightness settings. (i)</li><li>Slide the colored controls to adjust the brightness. (ii)</li><li>For precise adjustments, click the + or − buttons. (ii)</li></ul></div></li>}
+function ApprovedModeSelection(){return <li className="setup-step approved-start-pause approved-mode-selection"><div className="pro-control-screens">{[0,1].map(index=><figure className="pro-control-figure" key={index}><div className={`pro-control-screen screen-${index}`}><img src={`/pro-screens/4-mode-selection-${index}.svg`} width="742" height="674" alt={index===0?'Open light-mode selection.':'Select the Red or NIR wavelength group.'}/></div><figcaption>{['i','ii'][index]}</figcaption></figure>)}</div><div className="pro-control-copy"><div className="pro-control-heading"><span className="step-number" aria-hidden="true">4</span><h3>Mode Selection</h3></div><ul><li>Click the light-mode label to open the mode selection screen. (i)</li><li>Select Red or NIR (near-infrared) to choose the wavelength group. (ii)</li></ul></div></li>}
+function ApprovedPulseSetting(){const screens=[{src:1,label:'i',crop:'pulse-home'},{src:1,label:'ii',crop:'pulse-channel'},{src:2,label:'iii',crop:'pulse-presets'},{src:2,label:'iv',crop:'pulse-keypad'}];return <li className="setup-step approved-start-pause approved-pulse-setting">{[0,1].map(row=><div className={`pro-control-screens pulse-row-${row}`} key={row}>{screens.slice(row*2,row*2+2).map(screen=><figure className="pro-control-figure" key={screen.label}><div className={`pro-control-screen ${screen.crop}`}><img src={`/pro-screens/5-pulse-${screen.src}-${screen.crop==='pulse-home'||screen.crop==='pulse-keypad'?1:0}.svg`} alt={`Pulse settings screen ${screen.label}`}/></div><figcaption>{screen.label}</figcaption></figure>)}</div>)}<div className="pro-control-copy pulse-copy-top"><div className="pro-control-heading"><span className="step-number" aria-hidden="true">5</span><h3>Pulse Setting</h3></div><ul><li>Click Pulse on the main screen to open the pulse settings. (i)</li><li>Click the frequency value for Red or NIR to adjust that wavelength group. (ii)</li></ul></div><div className="pro-control-copy pulse-copy-bottom"><ul><li>Select a preset frequency, or click the entry field to enter a custom value. (iii)</li><li>Enter the desired frequency using the keypad, then click OK to confirm. (iv)</li></ul></div></li>}
+function ApprovedDefaultMode(){const rows=[{labels:['i','ii'],source:1,items:['Click Add as Default Mode to save the current settings. (i)','Review the settings, then click OK to confirm. (ii)']},{labels:['iii','iv'],source:2,items:['Click Default Mode to open your saved modes. (iii)','Slide a saved mode to the left to reveal the delete button. (iv)']},{labels:['v','vi','vii'],source:3,items:['Click Default Mode to open your saved modes. (v)','Press and hold a saved mode to open the digital adjustment screen. (vi)','Use the keypad to enter the value, then click OK to confirm. (vii)']}];return <li className="setup-step approved-start-pause approved-default-mode">{rows.map((row,index)=><div className="default-print-row" key={index}><div className="pro-control-screens">{row.labels.map((label,col)=><figure className="pro-control-figure" key={label}><div className={`pro-control-screen default-source-${row.source} default-crop-${col}`}><img src={`/pro-screens/6-default-mode-${row.source}-${col}.svg`} alt={`Default mode screen ${label}`}/></div><figcaption>{label}</figcaption></figure>)}</div><div className="pro-control-copy">{index===0&&<div className="pro-control-heading"><span className="step-number" aria-hidden="true">6</span><h3>Default Mode</h3></div>}<ul>{row.items.map(item=><li key={item}>{item}</li>)}</ul></div></div>)}</li>}
+function ApprovedPresetMode(){const photos=[{label:'Muscle',x:0,y:0},{label:'Sleep',x:40,y:349},{label:'Mood',x:0,y:664},{label:'Joint Pain',x:762,y:0},{label:'Skin',x:719,y:349},{label:'Recovery',x:762,y:664}];return <li className="setup-step approved-start-pause approved-preset-mode"><div className="preset-art">{[0,1].map(side=><div className={`preset-side ${side===0?'left-side':'right-side'}`} key={side}>{photos.slice(side*3,side*3+3).map((photo,index)=><figure className={`preset-photo photo-${index}`} key={photo.label}><div className="photo-crop"><img src="/pro-step-7-preset-mode.png" alt={`${photo.label} preset illustration`} style={{left:`-${photo.x/242*100}%`,top:`-${photo.y/187*100}%`}}/></div><figcaption>{photo.label}</figcaption></figure>)}</div>)}<figure className="preset-center"><div className="preset-display"><img src="/pro-step-7-preset-mode.png" alt="Preset mode selection screen"/></div><figcaption>i</figcaption></figure></div><div className="pro-control-copy"><div className="pro-control-heading"><span className="step-number" aria-hidden="true">7</span><h3>Preset Mode</h3></div><ul><li>Choose a preset shown on your device’s screen. (i)</li><li>Available labels may include Muscle, Joint Pain, Sleep, Skin, Mood, and Recovery. (i)</li><li>Preset names identify saved device settings; they do not guarantee a treatment outcome.</li></ul></div></li>}
+function ApprovedSynchronousWorking(){const rows=[{source:2,labels:['i','ii'],items:['Click Synchronous Working to enable pairing. (ii)','The highlighted Synchronous Working button indicates Sync Mode. (i)']},{source:1,labels:['iii','iv','v'],items:['Press and hold Synchronous Working for 5 seconds to open the device list. (iii)','The list shows the linked device. (iv)','To unlink a device, click its delete icon, then click OK to confirm. Synchronization ends when the device is unlinked. (iv–v)']}];return <li className="setup-step approved-sync">{rows.map((row,index)=><div className="sync-content-row" key={index}><div className="sync-content-screens">{row.labels.map((label,col)=><figure key={label}><div className={`sync-screen-crop sync-source-${row.source} sync-crop-${col}`}><img src={`/pro-screens/8-sync-${row.source}-${col}.svg`} alt={`Synchronous Working screen ${label}`}/></div><figcaption>{label}</figcaption></figure>)}</div><div className="sync-content-copy">{index===0&&<div className="sync-content-heading"><span className="step-number" aria-hidden="true">8</span><h3>Synchronous Working</h3></div>}<ul>{row.items.map(item=><li key={item}>{item}</li>)}</ul></div></div>)}</li>}
+function PagedSetup({data}:{data:HowToUseData}){const split=data.steps.length===8?4:3;const pro=data.steps[0]?.image?.src==='/pro-step-1-start-pause.png';const groups=pro?[data.steps.slice(0,3),data.steps.slice(3,5),data.steps.slice(5,6),data.steps.slice(6)]:[data.steps.slice(0,split),data.steps.slice(split)];return <div className="paged-setup">{groups.map((steps,page)=><div className={`setup-print-sheet ${pro?`pro-three-row-sheet pro-sheet-${page+1}`:''}`} key={page}><h2>Setup &amp; Controls{page>0?" — continued":""}</h2>{page===0&&<><p>{data.intro}</p>{data.diagram&&<Figure image={data.diagram}/>}</>}<ol className="setup-paged-steps">{steps.map((step,i)=>step.image?.src==='/pro-step-1-start-pause.png'?<ApprovedStartPause key={i}/>:step.image?.src==='/pro-step-2-time-setting.png'?<ApprovedTimeSetting key={i}/>:step.image?.src==='/pro-step-3-dimmer.png'?<ApprovedDimmer key={i}/>:step.image?.src==='/pro-step-4-mode-selection.png'?<ApprovedModeSelection key={i}/>:step.images?.[0]?.src==='/pro-step-5-pulse-1.png'?<ApprovedPulseSetting key={i}/>:step.images?.[0]?.src==='/pro-step-6-default-mode-1.png'?<ApprovedDefaultMode key={i}/>:step.image?.src==='/pro-step-7-preset-mode.png'?<ApprovedPresetMode key={i}/>:<Step key={i} step={step} index={groups.slice(0,page).reduce((count,group)=>count+group.length,0)+i}/>)}{page===groups.length-1&&<RemoteStep data={data}/>}</ol></div>)}</div>}
+function PortablePrimeSetup({data,manualId}:{data:HowToUseData;manualId:string}){const prime=manualId==='piri-prime';const groups=prime?[data.steps.slice(0,3),data.steps.slice(3)]:[data.steps];return <section id="how-to-use" className={`manual-section device-specific-setup ${prime?'prime-device-setup':'portable-device-setup'}`}>{groups.map((steps,page)=><div className="device-setup-sheet" key={page}><h2 className={page?'setup-continuation-title':''}>{sectionTitles['how-to-use']}{page?' — Continued':''}</h2>{page===0&&<p className="device-setup-intro">{data.intro}</p>}<div className="device-setup-body"><div className="device-setup-diagram">{prime?<figure className="device-control-figure"><svg viewBox={page===0?'175 40 345 875':'700 40 650 875'} role="img" aria-label={page===0?'Control Panel':'Remote Control, front and battery compartment'}><image href="/shared-controls/prime-panel-and-remote.png" width="1536" height="1024"/></svg><figcaption>{page===0?'Control Panel':'Remote Control · Front and battery compartment'}</figcaption></figure>:data.diagram&&<Figure image={data.diagram}/>}</div><ol className="setup-steps" start={prime?page*3+1:1}>{steps.map((step,index)=><Step key={index} step={step} index={prime?page*3+index:index}/>)}{page===groups.length-1&&<RemoteStep data={data}/>}</ol></div></div>)}</section>}
+export function HowToUse({data,manualId}:{data:HowToUseData;manualId?:string}) {
+  if(manualId==='piri-portable'||manualId==='piri-prime')return <PortablePrimeSetup data={data} manualId={manualId}/>
+  const standardSetup=desktopPrintGroup.has(manualId??'')||manualId==='piri-origin'
+  return <section id="how-to-use" className={`manual-section ${standardSetup?'standard-setup-print':extendedPrintGroup.has(manualId??'')?'paged-setup-print':'compact-setup-print'}`}><div className="setup-overview"><h2>{sectionTitles['how-to-use']}</h2><p className="section-intro setup-screen-intro">{data.intro}</p>{data.diagram&&<Figure image={data.diagram}/>} {standardSetup&&<SplitStandardControls/>}</div><div className="setup-instructions">{standardSetup&&<p className="setup-print-intro">Connect the device to a power outlet and follow the operating instructions below.</p>}<ol className="setup-steps">{data.steps.map((s,i)=><Step key={i} step={s} index={i}/>)}<RemoteStep data={data}/></ol></div>{extendedPrintGroup.has(manualId??'')&&<PagedSetup data={data}/>}</section>
 }
 
-function StepImage({ image }: { image: ImageRef }) {
-  return (
-    <div>
-      <Image
-        src={image.src || "/placeholder.svg"}
-        alt={image.alt}
-        width={image.width ?? 400}
-        height={image.height ?? 300}
-        className="mx-auto"
-      />
-      {image.caption && (
-        <p className="text-xs text-center text-muted-foreground mt-2">{image.caption}</p>
-      )}
-    </div>
-  )
-}
-
-function StepRow({ step, index }: { step: HowToStep; index: number }) {
-  const isFirst = index === 0
-  const images = step.images ?? (step.image ? [step.image] : [])
-
-  return (
-    <div
-      className={`flex gap-4 p-4 border rounded-lg ${isFirst ? "bg-blue-50" : ""}`}
-    >
-      <div
-        className={`w-8 h-8 ${isFirst ? "bg-blue-600" : "bg-red-600"} text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0`}
-      >
-        {index + 1}
-      </div>
-      <div className="flex-1">
-        <h4 className="font-medium mb-1">{step.title}</h4>
-        {step.subtitle && (
-          <h5 className="font-medium text-sm mb-2 text-muted-foreground">{step.subtitle}</h5>
-        )}
-        <ul className="text-sm text-muted-foreground space-y-1 ml-4 mb-3">
-          {step.bullets.map((b, i) => (
-            <li key={i}>• {renderInlineBold(b)}</li>
-          ))}
-        </ul>
-        {step.note && <p className="text-xs text-amber-600 mt-2 mb-3">{step.note}</p>}
-        {images.length > 0 && (
-          <div className="bg-white p-3 rounded-lg border space-y-4">
-            {images.map((img, i) => (
-              <StepImage key={i} image={img} />
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  )
-}
-
-export function HowToUse({ data }: HowToUseProps) {
-  return (
-    <section id="how-to-use" className="scroll-mt-20">
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Zap className="h-5 w-5" />
-            How to Use the Device
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-6">
-            <p className="text-muted-foreground">{data.intro}</p>
-
-            {data.diagram && (
-              <div className="bg-gray-50 p-4 rounded-lg border">
-                <Image
-                  src={data.diagram.src || "/placeholder.svg"}
-                  alt={data.diagram.alt}
-                  width={data.diagram.width ?? 600}
-                  height={data.diagram.height ?? 400}
-                  className="mx-auto"
-                />
-                {data.diagram.caption && (
-                  <p className="text-xs text-center text-muted-foreground mt-2">
-                    {data.diagram.caption}
-                  </p>
-                )}
-              </div>
-            )}
-
-            <div className="grid gap-4">
-              {data.steps.map((step, i) => (
-                <StepRow key={i} step={step} index={i} />
-              ))}
-
-              {data.remoteControl && (
-                <div className="flex gap-4 p-4 border rounded-lg bg-blue-50">
-                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
-                    R
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-medium mb-3">{data.remoteControl.title}</h4>
-                    <div className="flex flex-col lg:flex-row gap-4 items-start">
-                      <div className="flex-1 space-y-2">
-                        {data.remoteControl.intro && (
-                          <p className="text-sm text-muted-foreground">
-                            {data.remoteControl.intro}
-                          </p>
-                        )}
-                        {data.remoteControl.steps.map((s, i) => (
-                          <ul key={i} className="text-sm text-muted-foreground space-y-1 ml-4">
-                            {s.bullets.map((b, j) => (
-                              <li key={j}>• {renderInlineBold(b)}</li>
-                            ))}
-                          </ul>
-                        ))}
-                      </div>
-                      {data.remoteControl.image && (
-                        <div className="bg-white p-3 rounded-lg border">
-                          <StepImage image={data.remoteControl.image} />
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-    </section>
-  )
-}

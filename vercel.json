@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {"source": "/manual/piri-desktop/:path*", "destination": "/manual/piri-origin/:path*", "permanent": true},
+    {"source": "/manual/piri-desktop-pro/:path*", "destination": "/manual/piri-origin-pro/:path*", "permanent": true},
+    {"source": "/manual/piri-desktop-pro-new-gen/:path*", "destination": "/manual/piri-core-pro/:path*", "permanent": true},
+    {"source": "/manual/piri-max/:path*", "destination": "/manual/piri-max-v0/:path*", "permanent": true},
+    {"source": "/manual/piri-max-pro/:path*", "destination": "/manual/piri-max-pro-v0/:path*", "permanent": true}
+  ]
+}

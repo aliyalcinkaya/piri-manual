@@ -1,0 +1,763 @@
+{
+  "piri-prime": {
+    "src": "/irradiance/piri-prime.svg",
+    "geometrySrc": "/irradiance/piri-prime-geometry.svg",
+    "stations": [
+      {
+        "x": 383.41505523600773,
+        "width": 375,
+        "height": 1673,
+        "distance": 0
+      },
+      {
+        "x": 607.1919043470507,
+        "width": 415,
+        "height": 1713,
+        "distance": 75,
+        "irradiance": 110,
+        "overLimit": false
+      },
+      {
+        "x": 830.9687534580937,
+        "width": 455,
+        "height": 1753,
+        "distance": 150,
+        "irradiance": 91,
+        "overLimit": false
+      },
+      {
+        "x": 1054.7456025691367,
+        "width": 496,
+        "height": 1794,
+        "distance": 225,
+        "irradiance": 68,
+        "overLimit": false
+      },
+      {
+        "x": 1278.52245168018,
+        "width": 536,
+        "height": 1834,
+        "distance": 300,
+        "irradiance": 64,
+        "overLimit": false
+      },
+      {
+        "x": 1726.0761499022658,
+        "width": 616,
+        "height": 1914,
+        "distance": 450,
+        "irradiance": 60,
+        "overLimit": false
+      }
+    ],
+    "mobileSrc": "/irradiance/piri-prime-mobile.svg",
+    "instrument": "spectrometer",
+    "sourceUrl": "https://pirired.com.au/products/piri-prime",
+    "canvasWidth": 2098,
+    "canvasTop": 150.704752637509,
+    "canvasHeight": 758.2313325821981,
+    "readings": [
+      {
+        "distance": 75,
+        "irradiance": 110,
+        "overLimit": false
+      },
+      {
+        "distance": 150,
+        "irradiance": 91,
+        "overLimit": false
+      },
+      {
+        "distance": 225,
+        "irradiance": 68,
+        "overLimit": false
+      },
+      {
+        "distance": 300,
+        "irradiance": 64,
+        "overLimit": false
+      },
+      {
+        "distance": 450,
+        "irradiance": 60,
+        "overLimit": false
+      }
+    ],
+    "checkedAt": "2026-10-14T19:09:56.670Z"
+  },
+  "piri-origin": {
+    "src": "/irradiance/piri-origin.svg",
+    "geometrySrc": "/irradiance/piri-origin-geometry.svg",
+    "stations": [
+      {
+        "x": 366.1863420575618,
+        "width": 174,
+        "height": 276,
+        "distance": 0
+      },
+      {
+        "x": 593.4056383830946,
+        "width": 214,
+        "height": 316,
+        "distance": 75,
+        "irradiance": 112,
+        "overLimit": false
+      },
+      {
+        "x": 820.6249347086275,
+        "width": 254,
+        "height": 356,
+        "distance": 150,
+        "irradiance": 95,
+        "overLimit": false
+      },
+      {
+        "x": 1047.8442310341607,
+        "width": 295,
+        "height": 397,
+        "distance": 225,
+        "irradiance": 88,
+        "overLimit": false
+      },
+      {
+        "x": 1275.0635273596936,
+        "width": 335,
+        "height": 437,
+        "distance": 300,
+        "irradiance": 80,
+        "overLimit": false
+      },
+      {
+        "x": 1729.5021200107592,
+        "width": 415,
+        "height": 517,
+        "distance": 450,
+        "irradiance": 72,
+        "overLimit": false
+      }
+    ],
+    "mobileSrc": "/irradiance/piri-origin-mobile.svg",
+    "instrument": "spectrometer",
+    "sourceUrl": "https://pirired.com.au/products/piri-origin-red-light-therapy-panel-for-home-use-black",
+    "canvasWidth": 2101,
+    "canvasTop": 150.6248591621428,
+    "canvasHeight": 758.3511727952473,
+    "readings": [
+      {
+        "distance": 75,
+        "irradiance": 112,
+        "overLimit": false
+      },
+      {
+        "distance": 150,
+        "irradiance": 95,
+        "overLimit": false
+      },
+      {
+        "distance": 225,
+        "irradiance": 88,
+        "overLimit": false
+      },
+      {
+        "distance": 300,
+        "irradiance": 80,
+        "overLimit": false
+      },
+      {
+        "distance": 450,
+        "irradiance": 72,
+        "overLimit": false
+      }
+    ],
+    "checkedAt": "2026-10-14T19:09:56.840Z"
+  },
+  "piri-origin-pro": {
+    "src": "/irradiance/piri-origin-pro.svg",
+    "geometrySrc": "/irradiance/piri-origin-pro-geometry.svg",
+    "stations": [
+      {
+        "x": 366.1863420575618,
+        "width": 174,
+        "height": 276,
+        "distance": 0
+      },
+      {
+        "x": 593.4056383830946,
+        "width": 214,
+        "height": 316,
+        "distance": 75,
+        "irradiance": 112,
+        "overLimit": false
+      },
+      {
+        "x": 820.6249347086275,
+        "width": 254,
+        "height": 356,
+        "distance": 150,
+        "irradiance": 95,
+        "overLimit": false
+      },
+      {
+        "x": 1047.8442310341607,
+        "width": 295,
+        "height": 397,
+        "distance": 225,
+        "irradiance": 88,
+        "overLimit": false
+      },
+      {
+        "x": 1275.0635273596936,
+        "width": 335,
+        "height": 437,
+        "distance": 300,
+        "irradiance": 80,
+        "overLimit": false
+      },
+      {
+        "x": 1729.5021200107592,
+        "width": 415,
+        "height": 517,
+        "distance": 450,
+        "irradiance": 72,
+        "overLimit": false
+      }
+    ],
+    "mobileSrc": "/irradiance/piri-origin-pro-mobile.svg",
+    "instrument": "spectrometer",
+    "sourceUrl": "https://pirired.com.au/products/piri-origin-pro-red-light-therapy-panel-with-pulsing-black",
+    "canvasWidth": 2101,
+    "canvasTop": 150.6248591621428,
+    "canvasHeight": 758.3511727952473,
+    "readings": [
+      {
+        "distance": 75,
+        "irradiance": 112,
+        "overLimit": false
+      },
+      {
+        "distance": 150,
+        "irradiance": 95,
+        "overLimit": false
+      },
+      {
+        "distance": 225,
+        "irradiance": 88,
+        "overLimit": false
+      },
+      {
+        "distance": 300,
+        "irradiance": 80,
+        "overLimit": false
+      },
+      {
+        "distance": 450,
+        "irradiance": 72,
+        "overLimit": false
+      }
+    ],
+    "checkedAt": "2026-10-14T19:09:56.851Z"
+  },
+  "piri-core-pro": {
+    "src": "/irradiance/piri-core-pro.svg",
+    "geometrySrc": "/irradiance/piri-core-pro-geometry.svg",
+    "stations": [
+      {
+        "x": 379.55,
+        "width": 174,
+        "height": 276,
+        "distance": 0
+      },
+      {
+        "x": 652.6125231310173,
+        "width": 214,
+        "height": 316,
+        "distance": 75,
+        "irradiance": 138.1,
+        "overLimit": false
+      },
+      {
+        "x": 925.6750462620345,
+        "width": 254,
+        "height": 356,
+        "distance": 150,
+        "irradiance": 110.2,
+        "overLimit": false
+      },
+      {
+        "x": 1198.7375693930517,
+        "width": 295,
+        "height": 397,
+        "distance": 225,
+        "irradiance": 103.1,
+        "overLimit": false
+      },
+      {
+        "x": 1471.800092524069,
+        "width": 335,
+        "height": 437,
+        "distance": 300,
+        "irradiance": 88.1,
+        "overLimit": false
+      }
+    ],
+    "mobileSrc": "/irradiance/piri-core-pro-mobile.svg",
+    "instrument": "spectrometer",
+    "sourceUrl": "https://pirired.com.au/products/piri-core-pro",
+    "canvasWidth": 1843,
+    "canvasTop": 157.57258553437686,
+    "canvasHeight": 747.9680269822677,
+    "readings": [
+      {
+        "distance": 75,
+        "irradiance": 138.1,
+        "overLimit": false
+      },
+      {
+        "distance": 150,
+        "irradiance": 110.2,
+        "overLimit": false
+      },
+      {
+        "distance": 225,
+        "irradiance": 103.1,
+        "overLimit": false
+      },
+      {
+        "distance": 300,
+        "irradiance": 88.1,
+        "overLimit": false
+      }
+    ],
+    "checkedAt": "2026-10-14T19:09:56.920Z"
+  },
+  "piri-max-v0": {
+    "src": "/irradiance/piri-max-v0.svg",
+    "geometrySrc": "/irradiance/piri-max-v0-geometry.svg",
+    "stations": [
+      {
+        "x": 375.07406977114147,
+        "width": 258,
+        "height": 870,
+        "distance": 0
+      },
+      {
+        "x": 600.5175205536054,
+        "width": 298,
+        "height": 910,
+        "distance": 75,
+        "irradiance": 212,
+        "overLimit": false
+      },
+      {
+        "x": 825.9609713360694,
+        "width": 338,
+        "height": 950,
+        "distance": 150,
+        "irradiance": 111,
+        "overLimit": false
+      },
+      {
+        "x": 1051.4044221185331,
+        "width": 379,
+        "height": 991,
+        "distance": 225,
+        "irradiance": 103,
+        "overLimit": false
+      },
+      {
+        "x": 1276.8478729009971,
+        "width": 419,
+        "height": 1031,
+        "distance": 300,
+        "irradiance": 93,
+        "overLimit": false
+      },
+      {
+        "x": 1727.734774465925,
+        "width": 499,
+        "height": 1111,
+        "distance": 450,
+        "irradiance": 86,
+        "overLimit": false
+      }
+    ],
+    "mobileSrc": "/irradiance/piri-max-v0-mobile.svg",
+    "instrument": "spectrometer",
+    "sourceUrl": "https://pirired.com.au/products/piri-max",
+    "canvasWidth": 2099,
+    "canvasTop": 150.67812147905357,
+    "canvasHeight": 758.2712793198812,
+    "readings": [
+      {
+        "distance": 75,
+        "irradiance": 212,
+        "overLimit": false
+      },
+      {
+        "distance": 150,
+        "irradiance": 111,
+        "overLimit": false
+      },
+      {
+        "distance": 225,
+        "irradiance": 103,
+        "overLimit": false
+      },
+      {
+        "distance": 300,
+        "irradiance": 93,
+        "overLimit": false
+      },
+      {
+        "distance": 450,
+        "irradiance": 86,
+        "overLimit": false
+      }
+    ],
+    "checkedAt": "2026-10-14T19:09:56.926Z"
+  },
+  "piri-desktop-500": {
+    "src": "/irradiance/piri-desktop-500.svg",
+    "geometrySrc": "/irradiance/piri-desktop-500-geometry.svg",
+    "stations": [
+      {
+        "x": 375.07406977114147,
+        "width": 258,
+        "height": 300,
+        "distance": 0
+      },
+      {
+        "x": 600.5175205536054,
+        "width": 298,
+        "height": 340,
+        "distance": 75,
+        "irradiance": 163,
+        "overLimit": false
+      },
+      {
+        "x": 825.9609713360694,
+        "width": 338,
+        "height": 380,
+        "distance": 150,
+        "irradiance": 100,
+        "overLimit": false
+      },
+      {
+        "x": 1051.4044221185331,
+        "width": 379,
+        "height": 421,
+        "distance": 225,
+        "irradiance": 95,
+        "overLimit": false
+      },
+      {
+        "x": 1276.8478729009971,
+        "width": 419,
+        "height": 461,
+        "distance": 300,
+        "irradiance": 82,
+        "overLimit": false
+      },
+      {
+        "x": 1727.734774465925,
+        "width": 499,
+        "height": 541,
+        "distance": 450,
+        "irradiance": 77,
+        "overLimit": false
+      }
+    ],
+    "mobileSrc": "/irradiance/piri-desktop-500-mobile.svg",
+    "instrument": "spectrometer",
+    "sourceUrl": "https://pirired.com.au/products/piri-desktop-500",
+    "canvasWidth": 2099,
+    "canvasTop": 150.67812147905357,
+    "canvasHeight": 758.2712793198812,
+    "readings": [
+      {
+        "distance": 75,
+        "irradiance": 163,
+        "overLimit": false
+      },
+      {
+        "distance": 150,
+        "irradiance": 100,
+        "overLimit": false
+      },
+      {
+        "distance": 225,
+        "irradiance": 95,
+        "overLimit": false
+      },
+      {
+        "distance": 300,
+        "irradiance": 82,
+        "overLimit": false
+      },
+      {
+        "distance": 450,
+        "irradiance": 77,
+        "overLimit": false
+      }
+    ],
+    "checkedAt": "2026-10-14T19:09:56.970Z"
+  },
+  "piri-portable": {
+    "src": "/irradiance/piri-portable.svg",
+    "geometrySrc": "/irradiance/piri-portable-geometry.svg",
+    "stations": [
+      {
+        "x": 337.625,
+        "width": 45,
+        "height": 90,
+        "distance": 0
+      },
+      {
+        "x": 481.97917437700573,
+        "width": 58,
+        "height": 103,
+        "distance": 25,
+        "irradiance": 733.7,
+        "overLimit": false
+      },
+      {
+        "x": 626.3333487540115,
+        "width": 72,
+        "height": 117,
+        "distance": 50,
+        "irradiance": 652.2,
+        "overLimit": false
+      },
+      {
+        "x": 770.6875231310172,
+        "width": 85,
+        "height": 130,
+        "distance": 75,
+        "irradiance": 542,
+        "overLimit": false
+      },
+      {
+        "x": 1203.7500462620346,
+        "width": 125,
+        "height": 170,
+        "distance": 150,
+        "irradiance": 307.3,
+        "overLimit": false
+      },
+      {
+        "x": 2069.8750925240693,
+        "width": 206,
+        "height": 251,
+        "distance": 300,
+        "irradiance": 182.4,
+        "overLimit": false
+      }
+    ],
+    "mobileSrc": "/irradiance/piri-portable-mobile.svg",
+    "instrument": "solar_meter",
+    "sourceUrl": "https://pirired.com.au/products/piri-portable",
+    "canvasWidth": 2483,
+    "canvasTop": 240.30736216652235,
+    "canvasHeight": 673.7552210558479,
+    "readings": [
+      {
+        "distance": 25,
+        "irradiance": 733.7,
+        "overLimit": false
+      },
+      {
+        "distance": 50,
+        "irradiance": 652.2,
+        "overLimit": false
+      },
+      {
+        "distance": 75,
+        "irradiance": 542,
+        "overLimit": false
+      },
+      {
+        "distance": 150,
+        "irradiance": 307.3,
+        "overLimit": false
+      },
+      {
+        "distance": 300,
+        "irradiance": 182.4,
+        "overLimit": false
+      }
+    ],
+    "checkedAt": "2026-10-14T19:09:57.168Z"
+  },
+  "piri-max-1500": {
+    "src": "/irradiance/piri-max-1500.svg",
+    "geometrySrc": "/irradiance/piri-max-1500-geometry.svg",
+    "stations": [
+      {
+        "x": 375.07406977114147,
+        "width": 258,
+        "height": 870,
+        "distance": 0
+      },
+      {
+        "x": 600.5175205536054,
+        "width": 298,
+        "height": 910,
+        "distance": 75,
+        "irradiance": 194,
+        "overLimit": false
+      },
+      {
+        "x": 825.9609713360694,
+        "width": 338,
+        "height": 950,
+        "distance": 150,
+        "irradiance": 118,
+        "overLimit": false
+      },
+      {
+        "x": 1051.4044221185331,
+        "width": 379,
+        "height": 991,
+        "distance": 225,
+        "irradiance": 96,
+        "overLimit": false
+      },
+      {
+        "x": 1276.8478729009971,
+        "width": 419,
+        "height": 1031,
+        "distance": 300,
+        "irradiance": 90,
+        "overLimit": false
+      },
+      {
+        "x": 1727.734774465925,
+        "width": 499,
+        "height": 1111,
+        "distance": 450,
+        "irradiance": 82,
+        "overLimit": false
+      }
+    ],
+    "mobileSrc": "/irradiance/piri-max-1500-mobile.svg",
+    "instrument": "spectrometer",
+    "sourceUrl": "https://pirired.com.au/products/piri-max-1500",
+    "canvasWidth": 2099,
+    "canvasTop": 150.67812147905357,
+    "canvasHeight": 758.2712793198812,
+    "readings": [
+      {
+        "distance": 75,
+        "irradiance": 194,
+        "overLimit": false
+      },
+      {
+        "distance": 150,
+        "irradiance": 118,
+        "overLimit": false
+      },
+      {
+        "distance": 225,
+        "irradiance": 96,
+        "overLimit": false
+      },
+      {
+        "distance": 300,
+        "irradiance": 90,
+        "overLimit": false
+      },
+      {
+        "distance": 450,
+        "irradiance": 82,
+        "overLimit": false
+      }
+    ],
+    "checkedAt": "2026-10-14T19:09:57.183Z"
+  },
+  "piri-vista-2250": {
+    "src": "/irradiance/piri-vista-2250.svg",
+    "geometrySrc": "/irradiance/piri-vista-2250-geometry.svg",
+    "stations": [
+      {
+        "x": 384.15033480358954,
+        "width": 388,
+        "height": 870,
+        "distance": 0
+      },
+      {
+        "x": 607.7802686416765,
+        "width": 428,
+        "height": 910,
+        "distance": 75,
+        "irradiance": 203,
+        "overLimit": false
+      },
+      {
+        "x": 831.4102024797635,
+        "width": 468,
+        "height": 950,
+        "distance": 150,
+        "irradiance": 119,
+        "overLimit": false
+      },
+      {
+        "x": 1055.0401363178503,
+        "width": 509,
+        "height": 991,
+        "distance": 225,
+        "irradiance": 103,
+        "overLimit": false
+      },
+      {
+        "x": 1278.6700701559373,
+        "width": 549,
+        "height": 1031,
+        "distance": 300,
+        "irradiance": 92,
+        "overLimit": false
+      },
+      {
+        "x": 1725.9299378321111,
+        "width": 629,
+        "height": 1111,
+        "distance": 450,
+        "irradiance": 86,
+        "overLimit": false
+      }
+    ],
+    "mobileSrc": "/irradiance/piri-vista-2250-mobile.svg",
+    "instrument": "spectrometer",
+    "sourceUrl": "https://pirired.com.au/products/piri-vista-2250",
+    "canvasWidth": 2097,
+    "canvasTop": 150.73138379596438,
+    "canvasHeight": 758.191385844515,
+    "readings": [
+      {
+        "distance": 75,
+        "irradiance": 203,
+        "overLimit": false
+      },
+      {
+        "distance": 150,
+        "irradiance": 119,
+        "overLimit": false
+      },
+      {
+        "distance": 225,
+        "irradiance": 103,
+        "overLimit": false
+      },
+      {
+        "distance": 300,
+        "irradiance": 92,
+        "overLimit": false
+      },
+      {
+        "distance": 450,
+        "irradiance": 86,
+        "overLimit": false
+      }
+    ],
+    "checkedAt": "2026-10-14T19:09:57.191Z"
+  }
+}

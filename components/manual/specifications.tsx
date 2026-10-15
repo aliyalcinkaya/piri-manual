@@ -1,94 +1,15 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
-import { Settings } from "lucide-react"
-import Image from "next/image"
-import type { Specifications as SpecificationsData, SpecRow } from "@/content/manual/types"
+import {sectionTitles} from '@/content/manual/section-titles'
+import type {Specifications as SpecificationData} from '@/content/manual/types'
+import dataSources from '@/content/manual/verified-data.json'
+type Source={url:string;specs:Record<string,string>;measurements:{method:string;readings:string[]}[];checkedOn:string}
+export function Specifications({data,productName,manualId,liveSpecs,sourceUrl,id="specifications"}:{data:SpecificationData;productName:string;manualId:string;liveSpecs?:Record<string,string>;sourceUrl?:string;id?:string}) {
+  const snapshot=(dataSources as Record<string,Source>)[manualId]
+  const source=snapshot
+  const names:Record<string,string>={'Dimensions':'Dimensions (H × W × D)','Lifespan':'Product Lifespan','Voltage':'Power Source','EMF Radiation':'EMF'}
+  const rows=[{label:'Model',value:productName},...data.rows.filter(r=>r.label!=='Irradiance'&&(r.label!==''||!source?.specs.Wavelengths)).map(r=>({label:r.label==='Voltage'&&source?.specs['Power Source']?'Power source':r.label||'Wavelength values',value:liveSpecs?.[r.label]??liveSpecs?.[names[r.label]??r.label]??source?.specs[names[r.label]??r.label]??r.value}))]
+  const capabilities=['Brightness Control','Timer','Remote Control','Pulse Control','Wavelength Group Selection','Preset Memory']
+  for(const label of capabilities)if(!rows.some(row=>row.label===label)&&(liveSpecs?.[label]??source?.specs[label]))rows.push({label,value:liveSpecs?.[label]??source!.specs[label]})
+  return <section id={id} className={`manual-section ${data.extraImages?.length ? "has-spec-images" : ""}`}><h2>{sectionTitles['specifications']}</h2><div className="spec-table-wrap"><table className="spec-table"><caption className="sr-only">{productName} specifications</caption><tbody>{rows.map((r,i)=><tr key={i}><th scope="row">{r.label}</th><td>{r.value}</td></tr>)}</tbody></table></div>{source?<p className="source-link">Compare with the <a href={sourceUrl??source.url}>current {productName} product page</a>.</p>:<p className="source-link">Specifications are retained from the existing manual for this earlier model. <a href="https://pirired.com.au/pages/contact">Contact Piri Red</a> to confirm your hardware revision.</p>}
 
-interface SpecificationsProps {
-  data: SpecificationsData
-  productName: string
-}
-
-function SpecCell({ row }: { row: SpecRow }) {
-  return (
-    <div className="flex justify-between py-2 border-b">
-      <span className="text-sm font-medium">{row.label}</span>
-      <span className="text-sm text-muted-foreground">
-        {row.label === "Category" ? (
-          <Badge variant={row.value === "Commercial Use" ? "default" : "secondary"}>
-            {row.value}
-          </Badge>
-        ) : (
-          row.value
-        )}
-      </span>
-    </div>
-  )
-}
-
-export function Specifications({ data, productName }: SpecificationsProps) {
-  const rows: SpecRow[] = [{ label: "Model", value: productName }, ...data.rows]
-  const mid = Math.ceil(rows.length / 2)
-  const left = rows.slice(0, mid)
-  const right = rows.slice(mid)
-
-  return (
-    <section id="specifications" className="scroll-mt-20">
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Settings className="h-5 w-5" />
-            Specifications
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="space-y-3">
-              {left.map((row, i) => (
-                <SpecCell key={i} row={row} />
-              ))}
-            </div>
-            <div className="space-y-3">
-              {right.map((row, i) => (
-                <SpecCell key={i} row={row} />
-              ))}
-            </div>
-          </div>
-
-          {data.extraImages && data.extraImages.length > 0 && (
-            <>
-              <Separator className="my-6" />
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {data.extraImages.map((img, i) => (
-                  <div key={i} className="space-y-2">
-                    <Image
-                      src={img.src || "/placeholder.svg"}
-                      alt={img.alt}
-                      width={img.width ?? 600}
-                      height={img.height ?? 600}
-                      className="w-full h-auto rounded-lg border"
-                    />
-                    {img.caption && (
-                      <p className="text-sm text-muted-foreground text-center">{img.caption}</p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </>
-          )}
-
-          <Separator className="my-6" />
-
-          <div className="flex flex-wrap gap-2">
-            {data.certifications.map((cert) => (
-              <Badge key={cert} variant="outline">
-                {cert}
-              </Badge>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-    </section>
-  )
+  {data.extraImages?.map((image,i)=><figure className="manual-figure" key={i}><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size image: ${image.alt}`}><img src={image.src} alt={image.alt} width={image.width??600} height={image.height??400} loading="lazy"/></a>{image.caption&&<figcaption>{image.caption}</figcaption>}</figure>)}</section>
 }

@@ -4,9 +4,9 @@ import { heightLockCard, advancedWirelessSyncCard } from "@/content/manual/share
 export const piriPrime: ProductManual = {
   id: "piri-prime",
   name: "Piri Prime",
-  tagline: "Premium red light therapy system with cutting-edge technology.",
+  tagline: "Premium red light therapy system with timer, brightness, pulse and synchronization controls",
   cardImage: "/Piri_Prime_Front.jpg",
-  features: ["Premium Quality", "Latest Technology", "Smart Features"],
+  features: ["Timer", "Brightness Control", "Pulse Control", "Synchronization"],
 
   packageContents: [
     { label: "Piri Prime", image: "/Piri_Prime_Front.jpg" },
@@ -19,20 +19,19 @@ export const piriPrime: ProductManual = {
     intro:
       "Connect the power cord to the device panel and plug it into a wall outlet, ensuring you have a stable electrical connection. Make sure that cooling air can flow freely through the treatment device by keeping all ventilation openings clear of obstructions.",
     diagram: {
-      src: "/piri-prime-control-panel.png",
-      alt: "Piri Prime 840 Control Panel",
-      caption: "Piri Prime 840 Control Panel",
-      width: 200,
-      height: 400,
+      src: "/shared-controls/prime-panel-and-remote.png",
+      alt: "Piri Prime control panel and remote control, front and battery compartment views",
+      width: 1536,
+      height: 1024,
     },
     steps: [
       {
         title: "Light Selection (R/NIR Button)",
         subtitle: 'Press the "R/NIR" button to cycle through light modes:',
         bullets: [
-          "**First press:** Both red light and NIR light working (both RED and NIR indicators light up green)",
-          "**Second press:** Red light only (RED indicator lights up green only)",
-          "**Third press:** NIR light only (NIR indicator lights up green only - invisible to naked eye)",
+          "**First press:** Both red and near-infrared lights are on (both RED and NIR indicators light up green)",
+          "**Second press:** Red light only (only the RED indicator lights up green)",
+          "**Third press:** NIR light only (only the NIR indicator lights up green; near-infrared light is not visible to the naked eye)",
           "**Fourth press:** Turn off the device",
         ],
         note: "NIR is invisible to the naked human eye.",
@@ -41,17 +40,17 @@ export const piriPrime: ProductManual = {
         title: "Timer Settings (T Button)",
         subtitle: "Timing is not set by default. To set a specific treatment time:",
         bullets: [
-          'Press the "T" button once for 5-minute timing',
-          "Each additional press increases timing by 5 minutes (up to 30 minutes)",
-          '**Pause:** Press and hold "T" button for 2 seconds to pause',
-          '**Resume:** Press and hold "T" button for 2 seconds again to continue',
+          'Press the "T" button once to set a 5-minute timer',
+          "Each additional press increases the timer duration by 5 minutes (up to 30 minutes)",
+          '**Pause:** Press and hold the "T" button for 2 seconds to pause',
+          '**Resume:** Press and hold the "T" button for 2 seconds again to continue',
         ],
       },
       {
         title: "Brightness Control (Sun Button)",
         subtitle: "The default light intensity is maximum brightness. To adjust:",
         bullets: [
-          "Press the sun button to start at lowest brightness",
+          "Press the sun button to start at the lowest brightness",
           "Each press increases brightness by one level",
         ],
       },
@@ -73,28 +72,21 @@ export const piriPrime: ProductManual = {
       },
       {
         title: "Synchronization Control Function",
-        subtitle: "Sync function is turned off in factory settings. To enable:",
+        subtitle: "The sync function is turned off by default. To enable:",
         bullets: [
           "Place panels within 5 meters of each other",
-          '**Turn ON:** Press and hold "wave" key for 10 seconds in OFF state until screen shows "ON"',
-          '**Channel Selection:** Press and hold "T" key for 10 seconds in OFF state until screen shows "01"',
-          'Use "R/NIR" or "SUN" key to select sync channel, then press "T" to confirm',
-          "**Turn OFF:** Use same operation as turning ON",
+          '**Turn ON:** Press and hold the "wave" key for 10 seconds while the panel is off until the screen shows "ON"',
+          '**Channel Selection:** Press and hold the "T" key for 10 seconds while the panel is off until the screen shows "01"',
+          'Use the "R/NIR" or "SUN" key to select the sync channel, then press "T" to confirm',
+          "**Turn OFF:** Repeat the operation used to turn synchronization on",
         ],
       },
     ],
     remoteControl: {
       title: "REMOTE CONTROL",
       intro:
-        'The remote control function is enabled by default. If you want to disable the remote control function, press and hold the "R/NIR" button for 6 seconds. The remote control fits for 23A 12V battery.',
+        'The remote control function is enabled by default. If you want to disable the remote control function, press and hold the "R/NIR" button for 6 seconds. The remote control uses a 23A 12V battery.',
       steps: [],
-      image: {
-        src: "/piri-prime-remote-control.png",
-        alt: "Piri Prime 840 Remote Control with Battery",
-        caption: "Remote Control & 23A 12V Battery",
-        width: 300,
-        height: 200,
-      },
     },
   },
 
@@ -130,15 +122,15 @@ export const piriPrime: ProductManual = {
       accent: "from-amber-50 to-orange-50",
     },
     {
-      title: "Wireless Synchronous (Simple Mode)",
+      title: "Wireless Synchronization (Simple Mode)",
       body:
-        'With the panel in the OFF state, press and hold the fourth key on the control panel for 10 seconds, then the control board displays "L-ON". To cancel, use the same method - "L-OF" cancels the connection. Note: Press and hold the keys briefly to allow the device time to receive the signal.',
+        'With the panel in the OFF state, press and hold the fourth key on the control panel for 10 seconds until the display shows "L-ON". To cancel, use the same method - "L-OF" cancels the connection. Note: Press and hold the keys briefly to allow the device time to receive the signal.',
       accent: "from-cyan-50 to-blue-50",
     },
     {
       title: "Cancel Buzzer Sound",
       body:
-        "With the panel in the OFF state, press and hold the third button for 10 seconds to cancel the button sound. Re-enabling the sound uses the same method.",
+        "With the panel in the OFF state, press and hold the third button for 10 seconds to cancel the button sound. Use the same method to turn the sound back on.",
       accent: "from-rose-50 to-red-50",
     },
     heightLockCard,

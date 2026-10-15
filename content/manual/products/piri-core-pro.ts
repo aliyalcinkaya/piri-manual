@@ -4,13 +4,12 @@ import { proHowToSteps, advancedWirelessSyncCard } from "@/content/manual/shared
 export const piriCorePro: ProductManual = {
   id: "piri-core-pro",
   name: "Piri Core Pro",
-  tagline: "Next-generation desktop pro model with enhanced performance.",
+  tagline: "Desktop panel with touchscreen controls and saved presets.",
   cardImage: "/piri-desktop-pro-new-gen.png",
-  features: ["Next-Gen Technology", "Enhanced Performance", "Smart Display"],
+  features: ["Touchscreen Controls", "Saved Presets"],
 
   packageContents: [
-    { label: "Piri Core Pro", image: "/piri-desktop-pro-new-gen.png" },
-    { label: "Height-Adjustable Desktop Stand", image: "/placeholder.svg", accent: "bg-purple-100" },
+    { label: "Piri Core Pro with Integrated Stand", image: "/piri-desktop-pro-new-gen.png" },
     { label: "Power Cable", image: "/power-cable.png", accent: "bg-gray-100" },
     { label: "Eye Protection", image: "/goggles.png", accent: "bg-blue-100" },
   ],

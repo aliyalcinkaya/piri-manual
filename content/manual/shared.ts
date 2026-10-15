@@ -12,12 +12,12 @@ export const proHowToSteps: HowToStep[] = [
     subtitle: "Light Control",
     bullets: [
       "Click to turn on the light",
-      "Light off status - device is in standby mode",
+      "When the light is off, the device is in standby mode",
     ],
     image: {
       src: "/pro-step-1-start-pause.png",
       alt: "START/PAUSE Light Control Interface",
-      caption: "Light off status and Click to turn on the light",
+      caption: "Standby mode: click to turn on the light",
       width: 400,
       height: 300,
     },
@@ -26,15 +26,15 @@ export const proHowToSteps: HowToStep[] = [
     title: "TIME SETTING",
     subtitle: "Session Duration",
     bullets: [
-      "Click to enter time setting mode",
-      "Slide the color block to adjust time duration",
+      "Click to enter the time-setting mode",
+      "Slide the color block to adjust the session duration",
       "You can also turn off the time setting if desired",
     ],
     image: {
       src: "/pro-step-2-time-setting.png",
       alt: "Time Setting Interface",
       caption:
-        "Click to enter time setting, slide color block to adjust, and turn off time setting",
+        "Click to enter the time settings, slide the color block to adjust the duration, or turn off the timer",
       width: 600,
       height: 300,
     },
@@ -43,15 +43,15 @@ export const proHowToSteps: HowToStep[] = [
     title: "DIMMER",
     subtitle: "Brightness Control",
     bullets: [
-      "Click to enter brightness adjustment mode",
+      "Click to enter the brightness-adjustment mode",
       "Slide the color block to adjust brightness",
-      'Or click "+" or "-" buttons for precise control',
+      'Or click the "+" or "-" buttons for precise control',
     ],
     image: {
       src: "/pro-step-3-dimmer.png",
       alt: "Brightness Control Interface",
       caption:
-        "Click to enter brightness adjustment and slide color block or use +/- buttons",
+        "Click to adjust brightness, then slide the color block or use the +/- buttons",
       width: 400,
       height: 300,
     },
@@ -60,14 +60,13 @@ export const proHowToSteps: HowToStep[] = [
     title: "MODE SELECTION",
     subtitle: "Light Type Selection",
     bullets: [
-      "Enter the lighting mode selection",
-      "Choose from Red, NIR (Near-Infrared), or Blue light",
-      "Select the appropriate mode for your treatment needs",
+      "Open the light-mode selection screen",
+      "Choose Red or NIR (Near-Infrared) for this device's wavelength groups",
     ],
     image: {
       src: "/pro-step-4-mode-selection.png",
       alt: "Mode Selection Interface",
-      caption: "Enter lighting mode selection and select the lights",
+      caption: "Open the light-mode selection screen and select the lights",
       width: 400,
       height: 300,
     },
@@ -77,8 +76,8 @@ export const proHowToSteps: HowToStep[] = [
     subtitle: "Pulse Mode Configuration",
     bullets: [
       "Enter pulse mode for pulsed light therapy",
-      "Click on the numbers to select desired pulse frequency",
-      "Choose the frequency that best suits your treatment protocol",
+      "Click on the numbers to select the desired pulse frequency",
+      "Adjust the pulse frequency to suit your routine.",
     ],
     images: [
       {
@@ -103,21 +102,21 @@ export const proHowToSteps: HowToStep[] = [
     bullets: [
       'Click "ADD AS DEFAULT MODE" to save custom settings',
       "Slide the color block to the left to delete saved modes",
-      "Long press the color block to enter digital adjustment page",
-      "Click to enter the custom page for personalized settings",
+      "Press and hold the color block to open the digital adjustment page",
+      "Click to open the custom settings page",
     ],
     images: [
       {
         src: "/pro-step-6-default-mode-1.png",
         alt: "Adding Custom Mode Interface",
-        caption: "Adding a custom mode and keep",
+        caption: "Add and save a custom mode",
         width: 400,
         height: 300,
       },
       {
         src: "/pro-step-6-default-mode-2.png",
         alt: "Custom Page and Delete Mode Interface",
-        caption: "Click to enter custom page and slide color block left to delete",
+        caption: "Click to open the custom settings page; slide the color block left to delete a mode",
         width: 400,
         height: 300,
       },
@@ -125,7 +124,7 @@ export const proHowToSteps: HowToStep[] = [
         src: "/pro-step-6-default-mode-3.png",
         alt: "Digital Adjustment Interface",
         caption:
-          "Click to enter custom page and long press color block for digital adjustment",
+          "Click to open the custom settings page; press and hold the color block for digital adjustment",
         width: 600,
         height: 300,
       },
@@ -135,12 +134,9 @@ export const proHowToSteps: HowToStep[] = [
     title: "PRESET MODE",
     subtitle: "Pre-configured Treatment Programs",
     bullets: [
-      "**Muscle:** Optimized for muscle recovery and performance",
-      "**Joint Pain:** Targeted therapy for joint discomfort",
-      "**Sleep:** Settings designed to promote better sleep",
-      "**Skin:** Skin health and rejuvenation protocols",
-      "**Mood:** Light therapy for mood enhancement",
-      "**Recovery:** General recovery and wellness programs",
+      "Choose a preset shown on your device's screen",
+      "Screen labels may include Muscle, Joint Pain, Sleep, Skin, Mood and Recovery",
+      "Preset names identify saved device settings; they do not guarantee a treatment outcome",
     ],
     image: {
       src: "/pro-step-7-preset-mode.png",
@@ -154,25 +150,25 @@ export const proHowToSteps: HowToStep[] = [
     title: "SYNCHRONOUS WORKING",
     subtitle: "Multi-Device Synchronization",
     bullets: [
-      "Press and hold for 5 seconds to enter the pairing interface",
+      "Press and hold for 5 seconds to open the pairing interface",
       'Click "Sync Mode" to enable pairing',
-      "Click on the machine you want to pair with",
+      "Click on the device you want to pair with",
       'Confirm pairing by clicking "Ok"',
-      "Multiple devices will work in synchronized operation",
+      "The devices will operate in sync",
     ],
     images: [
       {
         src: "/pro-step-8-sync-1.png",
         alt: "Synchronous Working Pairing Interface",
         caption:
-          "Press and hold for 5 seconds to enter pairing interface, click on machine to pair with, and confirm",
+          "Press and hold for 5 seconds to open the pairing interface, select the device to pair with, and confirm",
         width: 600,
         height: 300,
       },
       {
         src: "/pro-step-8-sync-2.png",
         alt: "Sync Mode and Enable Pairing",
-        caption: "Sync Mode and click to enable pairing",
+        caption: "Click Sync Mode to enable pairing",
         width: 400,
         height: 300,
       },
@@ -181,25 +177,22 @@ export const proHowToSteps: HowToStep[] = [
 ]
 
 /**
- * The 5-step touch-panel flow plus remote-control block shared by the standard
- * Piri Origin and Piri Max v.0 panels. Identical across both devices.
+ * The button-control flow shared by Piri Desktop, Piri Max, Piri Vista,
+ * Piri Origin and Piri Max v.0. Edit here to update all five manuals.
  */
 export const desktopMaxHowToSteps: HowToStep[] = [
   {
-    title: "Operation Controls",
-    subtitle: "Select light type",
+    title: "Select Light Mode",
     bullets: [
-      'Touch "RED" icon on screen to activate red light therapy',
-      'Touch "NIR" icon on screen to activate near-infrared light',
-      "Touch the same icon again to turn off that light mode",
+      'Press the "RED" button to turn the red light on or off',
+      'Press the "NIR" button to turn the near-infrared light on or off',
     ],
   },
   {
     title: "Set Treatment Time",
     bullets: [
-      'Press "TIME+" to increase session duration',
-      'Press "TIME-" to decrease session duration',
-      "Set appropriate time based on your treatment needs",
+      'Press the "TIME+" button to increase session duration',
+      'Press the "TIME-" button to decrease session duration',
     ],
   },
   {
@@ -220,21 +213,21 @@ export const desktopMaxHowToSteps: HowToStep[] = [
   },
   {
     title: "End Session",
-    bullets: ["Touch RED/NIR icons to turn off lights"],
+    bullets: ["Press the \"RED\" and/or \"NIR\" buttons to turn off any active light modes, or wait until the timer runs out."],
   },
 ]
 
+export const standardPanelAndRemoteDiagram: NonNullable<HowToUse["diagram"]> = {
+  "src": "/shared-controls/standard-panel-and-remote.png",
+  "alt": "Black control panel and remote control, front and battery compartment views",
+  "width": 1536,
+  "height": 1024
+}
+
 export const desktopMaxRemoteControl: NonNullable<HowToUse["remoteControl"]> = {
   title: "REMOTE CONTROL",
-  intro: "The remote control uses a 23A 12V battery.",
+  intro: "Use the remote control’s \"RED\", \"NIR\", \"TIME+\" and \"TIME-\" buttons for the same light and timer controls described above. The remote control uses a 23A 12V battery.",
   steps: [],
-  image: {
-    src: "/desktop-max-remote-control.png",
-    alt: "Remote Control with 23A 12V Battery",
-    caption: "Remote Control & 23A 12V Battery",
-    width: 300,
-    height: 400,
-  },
 }
 
 /**
@@ -244,35 +237,35 @@ export const desktopMaxRemoteControl: NonNullable<HowToUse["remoteControl"]> = {
  * a card is reused, so it is defined once here.
  */
 export const pairingCard = {
-  title: "How to Pair Panel Light and Remote Control",
+  title: "How to Pair the Panel and Remote Control",
   body:
-    'With the panel\'s control board displaying "OFF", press and hold the third key "TIME+" on the control panel until "PAIR" is displayed. Then press the first key on the remote control. You will hear a beep, indicating successful pairing.',
+    'With the panel\'s control board displaying "OFF", press and hold the third button, "TIME+", on the control panel until "PAIR" is displayed. Then press the first key on the remote control. You will hear a beep, indicating successful pairing.',
   accent: "from-blue-50 to-indigo-50",
 }
 
 export const soundControlCard = {
-  title: "How to Turn Off Sound of the Control Board",
+  title: "How to Turn Off the Control Panel Sounds",
   body:
-    'With the panel in the OFF state, press and hold the fourth key "TIME-" to cancel the control panel button sounds. To turn on the sound again, use the same method.',
+    'With the panel in the OFF state, press and hold the fourth button, "TIME-", to cancel the control panel button sounds. To turn on the sound again, use the same method.',
   accent: "from-purple-50 to-pink-50",
 }
 
 export const heightLockCard = {
-  title: "How to Lock the Height of the Electric Stand",
+  title: "Optional electric stand: height lock",
   body:
-    "Press and hold the S+2 buttons on the remote control for more than 5 seconds at the same time to lock. To unlock, repeat the same process.",
+    "Press and hold the S and 2 buttons on the remote control simultaneously for more than 5 seconds to lock the stand height. To unlock, repeat the same process.",
   accent: "from-green-50 to-emerald-50",
 }
 
 /** The multi-device wireless sync feature card, shared by Pro models and Prime. */
 export const advancedWirelessSyncCard = {
-  title: "Wireless Synchronous (Advanced Multi-Device Sync)",
+  title: "Wireless Synchronization (Advanced Multi-Device Sync)",
   body: "Synchronize multiple devices for coordinated operation:",
   steps: [
-    "Enable synchronous for all devices you want synchronized. Turn on the sync function one by one.",
+    "Enable synchronization on all devices you want to synchronize. Turn on the sync function one by one.",
     "To designate a device as the host, long-press 'Synchronous working' to enter settings.",
-    "To have a device work synchronously with it, select its ID code.",
-    "To prevent other devices from controlling this device, cancel the synchronous choice. However, this device can still control other devices in the same group.",
+    "To synchronize another device with the host, select its ID code.",
+    "To prevent other devices from controlling this device, disable synchronization. However, this device can still control other devices in the same group.",
   ],
   accent: "from-violet-50 to-purple-50",
 }

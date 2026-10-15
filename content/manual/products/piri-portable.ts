@@ -6,17 +6,17 @@ export const piriPortable: ProductManual = {
   tagline:
     "Compact and lightweight red light therapy device perfect for travel and targeted treatments.",
   cardImage: "/piriportable000.jpg",
-  features: ["Portable Design", "Battery Powered", "Light-Weight"],
+  features: ["Portable Design", "Battery Powered", "Lightweight"],
 
   packageContents: [
     { label: "Piri Portable", image: "/piriportable000.jpg" },
-    { label: "Charging Cable", image: "/usb-c-cable-white.svg", accent: "bg-green-100" },
+    { label: "Charging Cable", image: "/piri-portable-charging-cable.png", accent: "bg-green-100" },
     { label: "Carrying Case", image: "/piri-portable-carry-case.png", accent: "bg-orange-100" },
   ],
 
   howToUse: {
     intro:
-      "Follow these step-by-step instructions to properly set up and use your Piri Portable 12 Dual device for optimal red light therapy treatment.",
+      "Follow these instructions to set up and use your Piri Portable.",
     diagram: {
       src: "/piri-portable-12-dual-diagram.png",
       alt: "Piri Portable 12 Dual Device Diagram",
@@ -49,7 +49,7 @@ export const piriPortable: ProductManual = {
         bullets: [
           "Use the brightness control button (①) to adjust the light intensity",
           "Monitor the digital display (②) to see your current settings",
-          "Start with lower intensity for your first sessions",
+          "Start with a lower intensity for your first sessions",
         ],
       },
       {
@@ -64,8 +64,8 @@ export const piriPortable: ProductManual = {
         title: "After Use",
         subtitle: "Power off the device",
         bullets: [
-          "Press and hold the ON/OFF button (⑤) for 5 seconds to turn off",
-          "Store in a safe, dry place",
+          "Press and hold the ON/OFF button (⑤) for 5 seconds to turn off the device",
+          "Store the device in a safe, dry place",
         ],
       },
     ],

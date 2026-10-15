@@ -1,110 +1,32 @@
-"use client"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Zap, ArrowRight } from 'lucide-react'
-import { useRouter } from 'next/navigation'
-import { productList } from "@/content/manual/index"
-
+'use client'
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { ArrowRight, ArrowUpRight, Search, X } from 'lucide-react'
+import {applyStoreProduct,fetchStoreProduct,storeProducts} from '@/content/manual/storefront'
+import type {ProductManual} from '@/content/manual/types'
+import {getManual} from '@/content/manual/index'
+import {manuals} from '@/content/manual/index'
+import {sizes,chips,matchesFilters} from '@/content/manual/library-filters'
+import {LibraryCarousel} from '@/components/manual/library-carousel'
+import { legacyNames, supportUrl } from '@/content/manual/links'
+import {ContactButton} from '@/components/contact-button'
+import { SiteHeader, SiteFooter } from '@/components/site-header'
 export default function ProductSelection() {
-  const router = useRouter()
+  const [liveProducts,setLiveProducts]=useState<Record<string,ProductManual>>({})
+  useEffect(()=>{let active=true;const refresh=()=>Promise.allSettled(Object.entries(storeProducts).map(async([key,product])=>{const result=await fetchStoreProduct(product.id);const snapshot=getManual(key);return [key,result&&snapshot?applyStoreProduct(snapshot,result):undefined] as const})).then(results=>{if(active)setLiveProducts(Object.fromEntries(results.flatMap(result=>result.status==='fulfilled'&&result.value[1]?[[result.value[0],result.value[1]] as [string,ProductManual]]:[])))});refresh();const interval=window.setInterval(refresh,60000);return()=>{active=false;clearInterval(interval)}},[])
+  const [query,setQuery]=useState('');const [selectedSizes,setSizes]=useState<string[]>([]);const [selectedChips,setChips]=useState<string[]>([])
+  useEffect(()=>{const sync=()=>{const params=new URLSearchParams(location.search);setQuery(params.get('q')??'');const selected=params.getAll('size').filter(value=>sizes.includes(value as typeof sizes[number]));const legacy=params.get('group');setSizes(selected.length?selected:legacy==='Compact'?['Portable','Desktop']:legacy==='Full-size'?['Full Size Panels']:[]);setChips(params.getAll('chip').filter(value=>chips.includes(value as typeof chips[number])))};sync();window.addEventListener('popstate',sync);return()=>window.removeEventListener('popstate',sync)},[])
+  function update(q:string,nextSizes:string[],nextChips:string[]){setQuery(q);setSizes(nextSizes);setChips(nextChips);const params=new URLSearchParams();if(q)params.set('q',q);nextSizes.forEach(value=>params.append('size',value));nextChips.forEach(value=>params.append('chip',value));history.replaceState(null,'',params.size?`/?${params}`:'/')}
+  const toggle=(values:string[],value:string)=>values.includes(value)?values.filter(item=>item!==value):[...values,value]
+  const ordered=Object.values(manuals).map(product=>liveProducts[product.id]??product)
+  const filtered=ordered.filter(product=>matchesFilters(product,query,selectedSizes,selectedChips))
+  const active=Boolean(query||selectedSizes.length||selectedChips.length)
+  return <><SiteHeader/><main id="main-content" className="library-main">
+    <header className="library-page-heading"><h1>All Manuals</h1><div className="library-heading-actions"><p>Find the manual for your Piri Panel</p><ContactButton/></div></header>
+    <section id="device-library" className="library-browser" aria-label="Manual Library"><aside className="library-search-rail"><h2>Find Your Manual</h2><div className="search-field"><Search size={19} aria-hidden="true"/><label className="sr-only" htmlFor="device-search">Search Devices Or Former Model Names</label><input id="device-search" type="search" name="q" autoComplete="off" placeholder="Search Your Model…" value={query} onChange={event=>update(event.target.value,selectedSizes,selectedChips)}/>{query&&<button type="button" aria-label="Clear Search" onClick={()=>update('',selectedSizes,selectedChips)}><X size={17} aria-hidden="true"/></button>}</div>
+      <div className="library-filter-groups"><fieldset><legend>Size</legend>{sizes.map(size=><label key={size}><input type="checkbox" name="size" value={size} checked={selectedSizes.includes(size)} onChange={()=>update(query,toggle(selectedSizes,size),selectedChips)}/><span>{size}</span></label>)}</fieldset><fieldset><legend>Chip Technology</legend>{chips.map(chip=><label key={chip}><input type="checkbox" name="chip" value={chip} checked={selectedChips.includes(chip)} onChange={()=>update(query,selectedSizes,toggle(selectedChips,chip))}/><span>{chip}</span></label>)}</fieldset></div>
+      <button type="button" className="clear-library-filters" disabled={!active} onClick={()=>update('',[],[])}>Clear Filters <X size={15} aria-hidden="true"/></button>
+    </aside><div className="library-results"><div className="library-results-heading"><h2>Your Manual Library</h2><p className="result-count" aria-live="polite" aria-atomic="true">{filtered.length} {filtered.length===1?'Manual':'Manuals'}</p></div>{filtered.length?<LibraryCarousel products={filtered}/>:<div className="empty-state"><h3>No Matching Device</h3><p>Try another model name or clear your filters to browse every manual.</p><button type="button" className="button-primary" onClick={()=>update('',[],[])}>Show All Manuals</button></div>}</div></section>
 
-  const handleProductSelect = (productId: string) => {
-    router.push(`/manual/${productId}`)
-  }
-
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
-        <div className="flex h-16 items-center px-4">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
-              <Zap className="h-5 w-5 text-white" />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-balance">Piri Red</h1>
-              <p className="text-sm text-muted-foreground">User Manuals</p>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-6xl mx-auto">
-          {/* Hero Section */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4 text-balance">Select Your Product</h1>
-            <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
-              Choose your Piri Red Light Therapy device to access its complete user manual and support documentation.
-            </p>
-          </div>
-
-          {/* Product Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {productList.map((product) => (
-              <Card
-                key={product.id}
-                className="group hover:shadow-lg transition-shadow cursor-pointer"
-                onClick={() => handleProductSelect(product.id)}
-              >
-                <CardHeader className="pb-4">
-                  <div className="aspect-square bg-gray-100 rounded-lg mb-4 overflow-hidden">
-                    <img
-                      src={product.cardImage || "/placeholder.svg"}
-                      alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
-                    />
-                  </div>
-                  <CardTitle className="text-xl">{product.name}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-sm text-pretty">{product.tagline}</p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {product.features.map((feature) => (
-                      <Badge key={feature} variant="secondary" className="text-xs">
-                        {feature}
-                      </Badge>
-                    ))}
-                  </div>
-
-                  <Button
-                    className="w-full group-hover:bg-red-600 group-hover:text-white transition-colors bg-transparent"
-                    variant="outline"
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      handleProductSelect(product.id)
-                    }}
-                  >
-                    View Manual
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Footer Info */}
-          <div className="mt-16 text-center">
-            <div className="bg-blue-50 dark:bg-blue-950/20 rounded-lg p-6 max-w-2xl mx-auto">
-              <h3 className="font-semibold mb-2">Need Help?</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Can't find your product or need additional support? Contact our customer service team.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-2 justify-center">
-                <Button variant="outline" size="sm">
-                  Contact Support
-                </Button>
-                <Button variant="outline" size="sm">
-                  Download All Manuals
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-  )
+  </main><SiteFooter/></>
 }

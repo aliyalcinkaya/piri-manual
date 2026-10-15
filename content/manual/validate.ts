@@ -31,7 +31,7 @@ function validate(m: ProductManual): void {
   check(m.id === m.id.toLowerCase() && !m.id.includes(" "), `${p} id must be a slug`)
   check(m.name.length > 0, `${p} name is empty`)
   check(m.tagline.length > 0, `${p} tagline is empty`)
-  check(m.cardImage.startsWith("/"), `${p} cardImage must be a /public path`)
+  check(m.cardImage.startsWith("/") || m.cardImage.startsWith("https://cdn.shopify.com/"), `${p} cardImage must be a local path or Shopify CDN image`)
   check(m.features.length >= 1, `${p} needs at least one feature`)
   check(m.packageContents.length >= 1, `${p} packageContents is empty`)
   check(m.howToUse.intro.length > 0, `${p} howToUse.intro is empty`)

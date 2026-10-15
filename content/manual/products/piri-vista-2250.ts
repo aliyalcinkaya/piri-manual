@@ -1,5 +1,6 @@
 import type { ProductManual } from "@/content/manual/types"
 import {
+  standardPanelAndRemoteDiagram,
   desktopMaxHowToSteps,
   desktopMaxRemoteControl,
   pairingCard,
@@ -18,7 +19,7 @@ export const piriVista2250: ProductManual = {
     { label: "Piri Vista 2250", image: "/piri-vista-2250.jpg" },
     { label: "Power Cable", image: "/power-cable.png", accent: "bg-gray-100" },
     { label: "Eye Protection", image: "/goggles.png", accent: "bg-blue-100" },
-    { label: "Remote Control", image: "/max-remote.png", accent: "bg-purple-100" },
+    { label: "Remote Control", image: "/shared-controls/standard-remote-front.png", accent: "bg-purple-100" },
     { label: "Mounting Hardware", image: "/mounting-hardware.png", accent: "bg-orange-100" },
     { label: "Lifting Rope", image: "/lifting-rope.png", accent: "bg-green-100" },
     { label: "Door Hanging Kit", image: "/door-hanging-kit.png", accent: "bg-yellow-100" },
@@ -26,14 +27,8 @@ export const piriVista2250: ProductManual = {
 
   howToUse: {
     intro:
-      "Connect the power cable and plug it into a wall outlet. Turn the panel on with the control panel or the remote, then use the timer and brightness controls to set your session. Wall-mount it or place it on a stand. Keep all ventilation openings clear. Most users position the panel about 15 cm away for 10-20 minute sessions, 3-5 times per week.",
-    diagram: {
-      src: "/piri-vista-2250-panel.png",
-      alt: "Piri Vista 2250 Control Panel",
-      caption: "Piri Vista 2250 Control Panel",
-      width: 400,
-      height: 400,
-    },
+      "Connect the power cable and plug it into a wall outlet. Turn the panel on with the control panel or the remote, then use the light-mode and timer buttons to set your session. Wall-mount it or place it on a stand. Keep all ventilation openings clear. Most users position the panel about 15 cm away for 10–20-minute sessions, 3-5 times per week.",
+    diagram: standardPanelAndRemoteDiagram,
     steps: desktopMaxHowToSteps,
     remoteControl: desktopMaxRemoteControl,
   },

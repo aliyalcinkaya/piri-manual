@@ -74,3 +74,17 @@ kopyala, aralarına virgül koy, içeriğini değiştir.
 Üç "Pro" modelin (Origin Pro, Core Pro, Max Pro v.0) kullanım adımları birebir aynı
 olduğu için `content/manual/shared.ts` içinde tek yerde tutuluyor; oradan düzenlersen
 üçünde birden değişir.
+
+## Light Output grafikleri
+
+Dokuz güncel kılavuzda Light Output grafiği bulunur: sekiz spektrometre grafiği ve Portable için bir Solar Meter grafiği. Her kılavuzdaki tek figure, açıklama paragrafının üstünde yer alır; eski ölçüm tablosunun yerini alır. Legacy Max Pro v.0 için doğrulanmış kaynak bulunmadığından grafik veya tahmini ölçüm eklenmez.
+
+`tools/refresh-irradiance.cjs`, güncel canlı Shopify Liquid payloadlarını alır. Hesaplama ve çizim için Shopify JS sürümünden kopyalanan `tools/irradiance-engine.cjs` kullanılır. Kılavuz grafikleri build sırasında yenilenir; açık kılavuzda metafield değişiklikleri anında görünmez. Yeni canlı veriyi almak için yenileme aracını ve kılavuz build/export sürecini tekrar çalıştır.
+
+Gerçek primary ürün fotoğrafları SVG içine gömülür; dokuz desktop ve dokuz mobile varyant çevrimdışı çalışır. HTML başlıkları ve dipnotlar korunur. Son mobile düzenleme eski “Panel” metin kuyruğunu kaldırır.
+
+Kılavuz grafiklerindeki tüm etiketler HTML body text olarak sabit 16 px kullanır; yeniden boyutlandırmada yazı boyutu değişmez. Aynı engine tarafından üretilen SVG yalnızca geometriyi taşır. `IrradianceChart` bileşenindeki `ResizeObserver` geometriyi ölçekler; yatay sticky rail seçimi yalnızca 820 px viewport sınırına değil, gerçek kılavuz kolonunun okunabilir genişliğine bağlıdır. Boyutlardaki `x` ayırıcı tick merkezine hizalanır; ölçüm istasyonlarında font boyutu sabit kalır.
+
+“Go To Product Irradiance Tab” bağlantısı her ürünün kendi ürün sayfasına `#irradiance` ile gider. Bu bağlantıyı açan product-details JS değişikliği canlı Shopify temasına dağıtıldı. Kılavuz çıktıları preview durumundadır; production kılavuz yayını yapılmadı.
+
+Doğrulama kapsamı: 10 kılavuz, 16 export, 11 offline HTML ve güncel offline pakette 119 dosya; sıfır hata. Desktop, mobile, print ve ürün sekmesine deeplink browser kontrolleri tamamlandı. Dokuz grafik × 1440/820/390 px olmak üzere 27 responsive kontrol geçti: sabit panel/ilk istasyon kırpılması veya mesafe etiketi çakışması yok; sticky davranışı ve sayfa genişliğine uyum doğrulandı. Yerel preview ve ZIP güncellendi. Mevcut kılavuz görsel sistemi korunur; bu grafikler için global tasarım belgeleri veya tokenlar değişmez.

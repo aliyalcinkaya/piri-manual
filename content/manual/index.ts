@@ -1,4 +1,6 @@
 import type { ProductManual } from "@/content/manual/types"
+import { legacyAliases } from './links'
+import {applyStoreProduct,storeProducts} from './storefront'
 import { piriPortable } from "@/content/manual/products/piri-portable"
 import { piriOrigin } from "@/content/manual/products/piri-origin"
 import { piriOriginPro } from "@/content/manual/products/piri-origin-pro"
@@ -13,25 +15,25 @@ import { piriVista2250 } from "@/content/manual/products/piri-vista-2250"
 /** Every product manual, in landing-page display order. */
 const all: ProductManual[] = [
   piriPortable,
-  piriOrigin,
-  piriOriginPro,
-  piriCorePro,
-  piriMaxV0,
-  piriMaxProV0,
-  piriPrime,
   piriDesktop500,
+  piriCorePro,
   piriMax1500,
   piriVista2250,
+  piriPrime,
+  piriOrigin,
+  piriOriginPro,
+  piriMaxV0,
+  piriMaxProV0,
 ]
 
 export const manuals: Record<string, ProductManual> = Object.fromEntries(
-  all.map((m) => [m.id, m]),
+  all.map((m) => [m.id, storeProducts[m.id]?applyStoreProduct(m,storeProducts[m.id]):m]),
 )
 
 export const productIds: string[] = all.map((m) => m.id)
 
 /** Trimmed shape used by the landing page product grid. */
-export const productList = all.map(({ id, name, tagline, cardImage, features }) => ({
+export const productList = Object.values(manuals).map(({ id, name, tagline, cardImage, features }) => ({
   id,
   name,
   tagline,
@@ -40,5 +42,5 @@ export const productList = all.map(({ id, name, tagline, cardImage, features }) 
 }))
 
 export function getManual(id: string): ProductManual | undefined {
-  return manuals[id]
+  return manuals[legacyAliases[id] ?? id]
 }

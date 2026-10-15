@@ -1,5 +1,6 @@
 import type { ProductManual } from "@/content/manual/types"
 import {
+  standardPanelAndRemoteDiagram,
   desktopMaxHowToSteps,
   desktopMaxRemoteControl,
   pairingCard,
@@ -9,7 +10,7 @@ import {
 export const piriDesktop500: ProductManual = {
   id: "piri-desktop-500",
   name: "Piri Desktop 500",
-  tagline: "Medical-grade power, plug-and-play simple.",
+  tagline: "Desktop red light panel with RED/NIR controls and a session timer.",
   cardImage: "/piri-desktop-500.png",
   features: ["Plug & Play", "500 W LED Power", "5 Wavelengths"],
 
@@ -17,19 +18,13 @@ export const piriDesktop500: ProductManual = {
     { label: "Piri Desktop 500", image: "/piri-desktop-500.png" },
     { label: "Power Cable", image: "/power-cable.png", accent: "bg-gray-100" },
     { label: "Eye Protection", image: "/goggles.png", accent: "bg-blue-100" },
-    { label: "Remote Control", image: "/desktop-remote.png", accent: "bg-purple-100" },
+    { label: "Remote Control", image: "/shared-controls/standard-remote-front.png", accent: "bg-purple-100" },
   ],
 
   howToUse: {
     intro:
-      "Connect the power cable and turn the panel on with the single button or the remote control - there is nothing to configure. Keep all ventilation openings clear. Sessions of 10-20 minutes at about 15 cm from the panel are all it needs.",
-    diagram: {
-      src: "/piri-desktop-500-panel.png",
-      alt: "Piri Desktop 500 Control Panel",
-      caption: "Piri Desktop 500 Control Panel",
-      width: 400,
-      height: 400,
-    },
+      "Refer to the product page for session duration and distance guidance.",
+    diagram: standardPanelAndRemoteDiagram,
     steps: desktopMaxHowToSteps,
     remoteControl: desktopMaxRemoteControl,
   },

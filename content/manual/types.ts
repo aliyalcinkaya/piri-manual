@@ -76,7 +76,15 @@ export type FeatureCard = {
   accent?: string
 }
 
+export type ReadingBlock = {type:'paragraph'|'heading';text:string}|{type:'list';items:string[]}|{type:'question';title:string;text:string}|{type:'link';url:string;text:string}
+export type ReadingSection = {blocks:ReadingBlock[]}
 export type ProductManual = {
+  readingSections?: Partial<Record<'treatment-guide'|'maintenance'|'faq'|'advanced-features'|'additional-features'|'what-is-red-light'|'warranty',ReadingSection>>
+  measurements?: {method:string;readings:string[]}[]
+
+  /** Live Shopify source, resolved by immutable product ID. */
+  storeProductUrl?: string
+  liveSpecs?: Record<string,string>
   /** URL slug and the only real key, e.g. "piri-portable" */
   id: string
   /** display name shown in headings, e.g. "Piri Portable" */

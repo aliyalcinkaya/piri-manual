@@ -1,5 +1,6 @@
 import type { ProductManual } from "@/content/manual/types"
 import {
+  standardPanelAndRemoteDiagram,
   desktopMaxHowToSteps,
   desktopMaxRemoteControl,
   pairingCard,
@@ -19,7 +20,7 @@ export const piriMax1500: ProductManual = {
     { label: "Piri Max 1500", image: "/piri-max-1500.png" },
     { label: "Power Cable", image: "/power-cable.png", accent: "bg-gray-100" },
     { label: "Eye Protection", image: "/goggles.png", accent: "bg-blue-100" },
-    { label: "Remote Control", image: "/max-remote.png", accent: "bg-purple-100" },
+    { label: "Remote Control", image: "/shared-controls/standard-remote-front.png", accent: "bg-purple-100" },
     { label: "Mounting Hardware", image: "/mounting-hardware.png", accent: "bg-orange-100" },
     { label: "Lifting Rope", image: "/lifting-rope.png", accent: "bg-green-100" },
     { label: "Door Hanging Kit", image: "/door-hanging-kit.png", accent: "bg-yellow-100" },
@@ -27,14 +28,8 @@ export const piriMax1500: ProductManual = {
 
   howToUse: {
     intro:
-      "Connect the power cable and plug it into a wall outlet. Turn the panel on with the control panel or the remote, then use the timer and brightness controls to set your session. Hang it on a door with the included adapter or mount it on a stand. Keep all ventilation openings clear.",
-    diagram: {
-      src: "/piri-max-1500-panel.jpg",
-      alt: "Piri Max 1500 Control Panel",
-      caption: "Piri Max 1500 Control Panel",
-      width: 400,
-      height: 400,
-    },
+      "Connect the power cable and plug it into a wall outlet. Turn the panel on with the control panel or the remote, then use the light-mode and timer buttons to set your session. Hang it on a door with the included adapter or mount it on a stand. Keep all ventilation openings clear.",
+    diagram: standardPanelAndRemoteDiagram,
     steps: desktopMaxHowToSteps,
     remoteControl: desktopMaxRemoteControl,
   },

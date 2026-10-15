@@ -1,0 +1,83 @@
+{
+  "piri-portable": {
+    "id": "gid://shopify/Product/10015235637536",
+    "title": "Piri Portable",
+    "handle": "piri-portable",
+    "featuredImage": {
+      "url": "https://cdn.shopify.com/s/files/1/0864/8550/0192/files/PiriPortablelightsonpresentation.png?v=1789036946",
+      "altText": null
+    }
+  },
+  "piri-origin": {
+    "id": "gid://shopify/Product/10473964994848",
+    "title": "Piri Origin",
+    "handle": "piri-origin-red-light-therapy-panel-for-home-use-black",
+    "featuredImage": {
+      "url": "https://cdn.shopify.com/s/files/1/0864/8550/0192/files/Piri_Origin_black_Front_view.jpg?v=1784223156",
+      "altText": null
+    }
+  },
+  "piri-origin-pro": {
+    "id": "gid://shopify/Product/10473969975584",
+    "title": "Piri Origin Pro",
+    "handle": "piri-origin-pro-red-light-therapy-panel-with-pulsing-black",
+    "featuredImage": {
+      "url": "https://cdn.shopify.com/s/files/1/0864/8550/0192/files/Piri_Origin_Pro_black_Front_view_and_panel.png?v=1784223647",
+      "altText": null
+    }
+  },
+  "piri-core-pro": {
+    "id": "gid://shopify/Product/10038735274272",
+    "title": "Piri Core Pro",
+    "handle": "piri-core-pro",
+    "featuredImage": {
+      "url": "https://cdn.shopify.com/s/files/1/0864/8550/0192/files/PiriCoreProLightsonpresentation_f25cefa1-af06-41da-aea3-e6ad98b50e2f.png?v=1789037735",
+      "altText": null
+    }
+  },
+  "piri-max-v0": {
+    "id": "gid://shopify/Product/9096141013280",
+    "title": "Piri Max v.0",
+    "handle": "piri-max",
+    "featuredImage": {
+      "url": "https://cdn.shopify.com/s/files/1/0864/8550/0192/files/pirimax00.png?v=1754388667",
+      "altText": null
+    }
+  },
+  "piri-prime": {
+    "id": "gid://shopify/Product/9116654993696",
+    "title": "Piri Prime",
+    "handle": "piri-prime",
+    "featuredImage": {
+      "url": "https://cdn.shopify.com/s/files/1/0864/8550/0192/files/Piri_Prime_Front.jpg?v=1754389474",
+      "altText": null
+    }
+  },
+  "piri-desktop-500": {
+    "id": "gid://shopify/Product/10423191470368",
+    "title": "Piri Desktop",
+    "handle": "piri-desktop-500",
+    "featuredImage": {
+      "url": "https://cdn.shopify.com/s/files/1/0864/8550/0192/files/Piri_Desktop_power_on.png?v=1784226468",
+      "altText": null
+    }
+  },
+  "piri-max-1500": {
+    "id": "gid://shopify/Product/10423191765280",
+    "title": "Piri Max",
+    "handle": "piri-max-1500",
+    "featuredImage": {
+      "url": "https://cdn.shopify.com/s/files/1/0864/8550/0192/files/Piri_Max_Door_Hang_lights_on_6bb167b1-2244-4a82-9975-c30b858232ce.png?v=1787396536",
+      "altText": null
+    }
+  },
+  "piri-vista-2250": {
+    "id": "gid://shopify/Product/10423192125728",
+    "title": "Piri Vista",
+    "handle": "piri-vista-2250",
+    "featuredImage": {
+      "url": "https://cdn.shopify.com/s/files/1/0864/8550/0192/files/Piri_Vista_Door_Hang_Power_On.png?v=1784227709",
+      "altText": null
+    }
+  }
+}

@@ -2,9 +2,7 @@
 const nextConfig = {
   output: "export",
   trailingSlash: true,
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  experimental: { cpus: 1 },
   images: {
     unoptimized: true,
   },

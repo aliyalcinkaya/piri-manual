@@ -1,0 +1,350 @@
+{
+  "piri-portable": {
+    "url": "https://pirired.com.au/products/piri-portable",
+    "specs": {
+      "Dimensions (H × W × D)": "130×85×30 mm",
+      "Weight": "0.56 kg",
+      "LED Technology": "5W, Dual Chip",
+      "LED Count": "12",
+      "Wavelengths": "1 Red / 1 NIR: 660nm, 850nm",
+      "Category": "Home Use",
+      "Brightness Control": "Yes",
+      "Timer": "No",
+      "Remote Control": "No",
+      "Pulse Control": "No",
+      "Wavelength Group Selection": "No",
+      "Preset Memory": "No",
+      "Colour": "Black",
+      "Warranty": "2 years",
+      "Beam Angle": "30 degrees",
+      "Product Lifespan": "100,000 hours",
+      "Zero Flicker": "Yes",
+      "EMF": "0.0 μT",
+      "JAS-ANZ Certification": "Certified",
+      "FDA Approval": "Approved",
+      "Power Source": "Rechargeable: 130-minute battery life"
+    },
+    "measurements": [
+      {
+        "method": "Piri Portable Solar Meter Data (Red + NIR)",
+        "readings": [
+          "25 mm, 733.7 mW/cm²",
+          "50 mm, 652.2 mW/cm²",
+          "75 mm, 542 mW/cm²",
+          "150 mm, 307.3 mW/cm²",
+          "300 mm, 182.4 mW/cm²"
+        ]
+      }
+    ],
+    "checkedOn": "2026-10-14"
+  },
+  "piri-origin": {
+    "url": "https://pirired.com.au/products/piri-origin-red-light-therapy-panel-for-home-use-black",
+    "specs": {
+      "LED Count": "60"
+    },
+    "measurements": [
+      {
+        "method": "Piri Origin Spectrometer Data (Red + NIR)",
+        "readings": [
+          "75 mm, 112 mW/cm²",
+          "150 mm, 95 mW/cm²",
+          "225 mm, 88 mW/cm²",
+          "300 mm, 80 mW/cm²",
+          "450 mm, 72 mW/cm²"
+        ]
+      },
+      {
+        "method": "Piri Origin Solar Meter Data (Red + NIR)",
+        "readings": [
+          "75 mm, 210 mW/cm²",
+          "150 mm, 178 mW/cm²",
+          "225 mm, 140 mW/cm²",
+          "300 mm, 127 mW/cm²",
+          "450 mm, 114 mW/cm²"
+        ]
+      }
+    ],
+    "checkedOn": "2026-10-14"
+  },
+  "piri-origin-pro": {
+    "url": "https://pirired.com.au/products/piri-origin-pro-red-light-therapy-panel-with-pulsing-black",
+    "specs": {
+      "LED Count": "60"
+    },
+    "measurements": [
+      {
+        "method": "Piri Origin Pro Spectrometer Data (Red + NIR)",
+        "readings": [
+          "75 mm, 112 mW/cm²",
+          "150 mm, 95 mW/cm²",
+          "225 mm, 88 mW/cm²",
+          "300 mm, 80 mW/cm²",
+          "450 mm, 72 mW/cm²"
+        ]
+      },
+      {
+        "method": "Piri Origin Pro Solar Meter Data (Red + NIR)",
+        "readings": [
+          "75 mm, 210 mW/cm²",
+          "150 mm, 178 mW/cm²",
+          "225 mm, 140 mW/cm²",
+          "300 mm, 127 mW/cm²",
+          "450 mm, 114 mW/cm²"
+        ]
+      }
+    ],
+    "checkedOn": "2026-10-14"
+  },
+  "piri-core-pro": {
+    "url": "https://pirired.com.au/products/piri-core-pro",
+    "specs": {
+      "Dimensions (H × W × D)": "316×214×60 mm",
+      "Weight": "4.5 kg",
+      "LED Technology": "5W, Dual Chip",
+      "LED Count": "60",
+      "Wavelengths": "2 Red / 3 NIR: 630, 660, 810, 830, 850nm",
+      "Category": "Home Use",
+      "Brightness Control": "Yes",
+      "Timer": "Yes",
+      "Remote Control": "No",
+      "Pulse Control": "Yes",
+      "Wavelength Group Selection": "Yes",
+      "Preset Memory": "Yes",
+      "Colour": "Black",
+      "Warranty": "2 years",
+      "Beam Angle": "30 degrees",
+      "Product Lifespan": "100,000 hours",
+      "Zero Flicker": "Yes",
+      "EMF": "0.0 μT",
+      "JAS-ANZ Certification": "Certified",
+      "FDA Approval": "Approved",
+      "Power Source": "Mains Powered"
+    },
+    "measurements": [
+      {
+        "method": "Piri Core Pro Spectrometer Data (Red + NIR)",
+        "readings": [
+          "75 mm, 138.1 mW/cm²",
+          "150 mm, 110.2 mW/cm²",
+          "225 mm, 103.1 mW/cm²",
+          "300 mm, 88.1 mW/cm²"
+        ]
+      }
+    ],
+    "checkedOn": "2026-10-14"
+  },
+  "piri-max-v0": {
+    "url": "https://pirired.com.au/products/piri-max",
+    "specs": {
+      "LED Count": "300"
+    },
+    "measurements": [
+      {
+        "method": "Piri Max v.0 Spectrometer Data (Red + NIR)",
+        "readings": [
+          "75 mm, 212 mW/cm²",
+          "150 mm, 111 mW/cm²",
+          "225 mm, 103 mW/cm²",
+          "300 mm, 93 mW/cm²",
+          "450 mm, 86 mW/cm²"
+        ]
+      },
+      {
+        "method": "Piri Max v.0 Solar Meter Data (Red + NIR)",
+        "readings": [
+          "150 mm, 194 mW/cm²",
+          "225 mm, 183 mW/cm²",
+          "300 mm, 174 mW/cm²",
+          "450 mm, 166 mW/cm²"
+        ]
+      }
+    ],
+    "checkedOn": "2026-10-14"
+  },
+  "piri-prime": {
+    "url": "https://pirired.com.au/products/piri-prime",
+    "specs": {
+      "Dimensions (H × W × D)": "1713×415×71 mm",
+      "Weight": "35.0 kg",
+      "LED Technology": "5W, Mono Chip",
+      "LED Count": "840",
+      "Wavelengths": "2 Red / 3 NIR: 630, 660, 810, 830, 850nm",
+      "Category": "Commercial Use",
+      "Brightness Control": "Yes",
+      "Timer": "Yes",
+      "Remote Control": "Yes",
+      "Pulse Control": "Yes",
+      "Wavelength Group Selection": "Yes",
+      "Preset Memory": "No",
+      "Colour": "Black",
+      "Warranty": "3 years",
+      "Beam Angle": "30 degrees",
+      "Product Lifespan": "100,000 hours",
+      "Zero Flicker": "Yes",
+      "EMF": "0.0 μT",
+      "JAS-ANZ Certification": "Certified",
+      "FDA Approval": "Approved",
+      "Power Source": "Mains Powered"
+    },
+    "measurements": [
+      {
+        "method": "Piri Prime Solar Meter Data (Red + NIR)",
+        "readings": [
+          "75 mm, 214 mW/cm²",
+          "150 mm, 179 mW/cm²",
+          "225 mm, 159 mW/cm²",
+          "300 mm, 153 mW/cm²",
+          "450 mm, 132 mW/cm²"
+        ]
+      }
+    ],
+    "checkedOn": "2026-10-14"
+  },
+  "piri-desktop-500": {
+    "url": "https://pirired.com.au/products/piri-desktop-500",
+    "specs": {
+      "Dimensions (H × W × D)": "340×298×60 mm",
+      "Weight": "4.5 kg",
+      "LED Technology": "5W, Mono Chip",
+      "LED Count": "96",
+      "Wavelengths": "2 Red / 3 NIR: 630, 660, 810, 830, 850nm",
+      "Category": "Home Use",
+      "Brightness Control": "No",
+      "Timer": "Yes",
+      "Remote Control": "Yes",
+      "Pulse Control": "No",
+      "Wavelength Group Selection": "Yes",
+      "Preset Memory": "No",
+      "Colour": "Black",
+      "Warranty": "2 years",
+      "Beam Angle": "30 degrees",
+      "Product Lifespan": "100,000 hours",
+      "Zero Flicker": "Yes",
+      "EMF": "0.0 μT",
+      "JAS-ANZ Certification": "Pending",
+      "FDA Approval": "Pending",
+      "Power Source": "Mains Powered"
+    },
+    "measurements": [
+      {
+        "method": "Piri Desktop Spectrometer Data (Red + NIR)",
+        "readings": [
+          "75 mm, 163 mW/cm²",
+          "150 mm, 100 mW/cm²",
+          "225 mm, 95 mW/cm²",
+          "300 mm, 82 mW/cm²",
+          "450 mm, 77 mW/cm²"
+        ]
+      },
+      {
+        "method": "Piri Desktop Solar Meter Data (Red + NIR)",
+        "readings": [
+          "75 mm, 212 mW/cm²",
+          "150 mm, 185 mW/cm²",
+          "225 mm, 171 mW/cm²",
+          "300 mm, 162 mW/cm²",
+          "450 mm, 152 mW/cm²"
+        ]
+      }
+    ],
+    "checkedOn": "2026-10-14"
+  },
+  "piri-max-1500": {
+    "url": "https://pirired.com.au/products/piri-max-1500",
+    "specs": {
+      "Dimensions (H × W × D)": "910×298×60 mm",
+      "Weight": "11.0 kg",
+      "LED Technology": "5W, Mono Chip",
+      "LED Count": "296",
+      "Wavelengths": "2 Red / 3 NIR: 630, 660, 810, 830, 850nm",
+      "Category": "Home Use",
+      "Brightness Control": "Yes",
+      "Timer": "Yes",
+      "Remote Control": "Yes",
+      "Pulse Control": "No",
+      "Wavelength Group Selection": "Yes",
+      "Preset Memory": "No",
+      "Colour": "Black",
+      "Warranty": "2 years",
+      "Beam Angle": "30 degrees",
+      "Product Lifespan": "100,000 hours",
+      "Zero Flicker": "Yes",
+      "EMF": "0.0 μT",
+      "JAS-ANZ Certification": "Pending",
+      "FDA Approval": "Pending",
+      "Power Source": "Mains Powered"
+    },
+    "measurements": [
+      {
+        "method": "Piri Max Spectrometer Data (Red + NIR)",
+        "readings": [
+          "75 mm, 194 mW/cm²",
+          "150 mm, 118 mW/cm²",
+          "225 mm, 96 mW/cm²",
+          "300 mm, 90 mW/cm²",
+          "450 mm, 82 mW/cm²"
+        ]
+      },
+      {
+        "method": "Piri Max Solar Meter Data (Red + NIR)",
+        "readings": [
+          "75 mm, 219 mW/cm²",
+          "150 mm, 187 mW/cm²",
+          "225 mm, 172 mW/cm²",
+          "300 mm, 163 mW/cm²",
+          "450 mm, 154 mW/cm²"
+        ]
+      }
+    ],
+    "checkedOn": "2026-10-14"
+  },
+  "piri-vista-2250": {
+    "url": "https://pirired.com.au/products/piri-vista-2250",
+    "specs": {
+      "Dimensions (H × W × D)": "910×428×60 mm",
+      "Weight": "19.0 kg",
+      "LED Technology": "5W, Mono Chip",
+      "LED Count": "446",
+      "Wavelengths": "2 Red / 3 NIR: 630, 660, 810, 830, 850nm",
+      "Category": "Home Use",
+      "Brightness Control": "Yes",
+      "Timer": "Yes",
+      "Remote Control": "Yes",
+      "Pulse Control": "No",
+      "Wavelength Group Selection": "Yes",
+      "Preset Memory": "No",
+      "Colour": "Black",
+      "Warranty": "2 years",
+      "Beam Angle": "30 degrees",
+      "Product Lifespan": "100,000 hours",
+      "Zero Flicker": "Yes",
+      "EMF": "0.0 μT",
+      "JAS-ANZ Certification": "Pending",
+      "FDA Approval": "Pending",
+      "Power Source": "Mains Powered"
+    },
+    "measurements": [
+      {
+        "method": "Piri Vista Spectrometer Data (Red + NIR)",
+        "readings": [
+          "75 mm, 203 mW/cm²",
+          "150 mm, 119 mW/cm²",
+          "225 mm, 103 mW/cm²",
+          "300 mm, 92 mW/cm²",
+          "450 mm, 86 mW/cm²"
+        ]
+      },
+      {
+        "method": "Piri Vista Solar Meter Data (Red + NIR)",
+        "readings": [
+          "150 mm, 190 mW/cm²",
+          "225 mm, 174 mW/cm²",
+          "300 mm, 166 mW/cm²",
+          "450 mm, 156 mW/cm²"
+        ]
+      }
+    ],
+    "checkedOn": "2026-10-14"
+  }
+}

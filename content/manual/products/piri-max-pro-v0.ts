@@ -17,7 +17,7 @@ export const piriMaxProV0: ProductManual = {
     { label: "Piri Max Pro v.0", image: "/pirimaxpro02.png" },
     { label: "Power Cable", image: "/power-cable.png", accent: "bg-gray-100" },
     { label: "Eye Protection", image: "/goggles.png", accent: "bg-blue-100" },
-    { label: "Remote Control", image: "/pro-max-remote.png", accent: "bg-purple-100" },
+    { label: "Remote Control", image: "/shared-controls/standard-remote-front.png", accent: "bg-purple-100" },
     { label: "Lifting Rope", image: "/lifting-rope.png", accent: "bg-green-100" },
     { label: "Mounting Hardware", image: "/mounting-hardware.png", accent: "bg-orange-100" },
     { label: "Door Hanging Kit", image: "/door-hanging-kit.png", accent: "bg-yellow-100" },
@@ -54,3 +54,4 @@ export const piriMaxProV0: ProductManual = {
   showAdvancedFeatures: false,
   warrantyYears: 2,
 }
+

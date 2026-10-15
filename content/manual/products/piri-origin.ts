@@ -1,5 +1,6 @@
 import type { ProductManual } from "@/content/manual/types"
 import {
+  standardPanelAndRemoteDiagram,
   desktopMaxHowToSteps,
   desktopMaxRemoteControl,
   pairingCard,
@@ -17,19 +18,13 @@ export const piriOrigin: ProductManual = {
     { label: "Piri Origin", image: "/piridesktopi00.png" },
     { label: "Power Cable", image: "/power-cable.png", accent: "bg-gray-100" },
     { label: "Eye Protection", image: "/goggles.png", accent: "bg-blue-100" },
-    { label: "Remote Control", image: "/desktop-remote.png", accent: "bg-purple-100" },
+    { label: "Remote Control", image: "/shared-controls/standard-remote-front.png", accent: "bg-purple-100" },
   ],
 
   howToUse: {
     intro:
-      "Connect the device to a power outlet and follow these operation instructions for safe and effective red light therapy treatment.",
-    diagram: {
-      src: "/desktop-max-control-panel.png",
-      alt: "Control Panel",
-      caption: "Control Panel",
-      width: 200,
-      height: 400,
-    },
+      "Connect the device to a power outlet and follow the operating instructions below.",
+    diagram: standardPanelAndRemoteDiagram,
     steps: desktopMaxHowToSteps,
     remoteControl: desktopMaxRemoteControl,
   },
